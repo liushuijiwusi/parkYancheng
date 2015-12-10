@@ -1,0 +1,196 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9Bit </title>
+    <meta name="keywords" value="江苏九比特" />
+    <meta name="description" />
+    <link href="css/body.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/web_js.js"></script>
+            <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+            <script type="text/javascript">
+                $(function () {
+                    $('.map_i li').hover(function () {
+                        $(this).css({ zIndex: '3' }).find('.map_des').show();
+                    }, function () {
+                        $(this).css({ zIndex: '2' }).find('.map_des').hide();
+                    });
+                });
+            </script>
+
+    
+<style>
+    .foot {
+        background-color: #f2f2f3;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="back_to_top"><a title="返回顶部" href="javascript:;"><i class="i"></i></a></div>
+
+    <div class="container">
+
+        <div class="container_page clearfix">
+            <div class="head back_white">
+                <div class="web_widht top clearfix">
+                    <div class="logo left" ><a href="/"><img src="images/logo.png" style="height:80px;"/></a></div>
+                    <div class="log_state right font16" id="login_status" style="display:block">
+                        <a href="login" class="log">登录</a><a href="register" class="reg">注册</a>
+                    </div>
+                </div>
+                <div class="nav font16">
+                    <div class="clearfix web_widht">
+                        <ul class="clearfix left">
+                            <li  class="on">
+                                <a href="/">首 页</a></li@Html>
+                            </li>
+                            <li><a href="login">个人中心</a></li>
+                            <li ><a href="/map">停车场搜索</a></li>
+                            <li ><a href="/pay.html">停车指南</a></li>
+                            <li><a href="/feedback">投诉建议</a></li>
+                            <li ><a href="/partner">加盟者</a></li>
+                        </ul>
+                        <div class="search_i  right relative">
+                            <form action="/help/" method="post" onsubmit="return checksearch()">
+                                <script>
+                                    function checksearch() {
+                                        if ($('#keywords').val().replace(/\s/ig, '') == '') {
+                                            $('#keywords').focus();
+                                            return false;
+                                        }
+                                        window.location.href = '/search/' + escape($('#keywords').val());
+                                        return false;
+                                    }
+                                </script>
+                                <input class="input_1 font14 radius_3" type="text" onblur="if(this.value=='') this.value='请输入关建字'" onclick="if(this.value=='请输入关建字') this.value=''" value="请输入关建字" name="keywords" id="keywords" />
+                                <input class="but_1 absolute pointer" type="submit" name="button" id="button" value="" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div id="slideBox" class="slideBox">
+    <div class="hd">
+        <ul></ul>
+    </div>
+    <div class="banner">
+        <ul>
+        <li style="background:#63ecd4 url(images/photo1.png) no-repeat center top;">
+            <a href="/partner" target="_blank"></a>
+        </li>
+        <li style="background:#63ecd4 url(images/photo2.png) no-repeat center top;">
+            <a href="login" target="_blank"></a>
+        </li>
+        </ul>
+    </div>
+    <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+    <a class="prev" href="javascript:void(0)"></a>
+    <a class="next" href="javascript:void(0)"></a>
+</div>
+
+<div class="web_widht">
+    <div class="news_i radius_3">
+        <div class="laba"></div>
+        <div class="txtScroll-left right">
+            <div class="bd left">
+                <ul>
+                <li>2015-09-20<a href="/ann/detail_8">热烈祝贺江苏九比特测试版上线了！！！</a></li>
+                </ul>
+            </div>
+            <div class="hd right relative"><a class="prev" href="javascript:;"></a><a class="next" href="javascript:;"></a></div>
+        </div>
+    </div>
+
+    <div class="dist font24 radius_3 relative text_center">我们全国目前共有 <b class="font36 color_f">4</b> 个停车场 <b class="font36 color_f">16299</b> 个停车位 <a href="/map/" class="i"><img src="images/ico3.png" /></a></div>
+
+    <div class="map_i relative font18">
+        <ul>
+            <li class="gd">
+                <div class="map_des absolute color_f radius_3 clearfix">
+                    <div class="left">停车场：<b>3</b>个</div>
+                    <div class="right">停车位：<b>15999</b>个</div>
+                    <i class="map_sj i"></i>
+                </div>
+                <a href="#"><i class="dian i"></i>广东</a>
+            </li>
+            <li class="fj">
+                <div class="map_des absolute color_f radius_3 clearfix">
+                    <div class="left">停车场：<b>0</b>个</div>
+                    <div class="right">停车位：<b>0</b>个</div>
+                    <i class="map_sj i"></i>
+                </div>
+                <a href="#"><i class="dian i"></i>福建</a>
+            </li>
+            <li class="hb">
+                <div class="map_des absolute color_f radius_3 clearfix">
+                    <div class="left">停车场：<b>0</b>个</div>
+                    <div class="right">停车位：<b>0</b>个</div>
+                    <i class="map_sj i"></i>
+                </div>
+                <a href="#"><i class="dian i"></i>湖北</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="back_white p_tb50">
+    <div class="news_list web_widht">
+        <div class="title color_3 font24">最新动态&nbsp;&nbsp;<span class="color_c">LATEST NEWS</span></div>
+        <ul class="clearfix">
+            <li>
+                <a href="/news/detail_4">
+                    <div class="news_img"><img src="images/photo1.png" /></div>   
+
+                    <div class="news_con">
+                        <h1>APP成功上线</h1>
+                        <p></p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/news/detail_2">
+                    <div class="news_img"><img src="images/photo1.png" /></div>   
+
+                    <div class="news_con">
+                        <h1>测试标题</h1>
+                        <p>活动简介内容该，哈哈哈</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/news/detail_1">
+                    <div class="news_img"><img src="images/photo1.png" /></div>   
+
+                    <div class="news_con">
+                        <h1>公司的最新动态</h1>
+                        <p></p>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+        <div class="foot back_white">
+            <div class="web_widht">
+                <div class="ewm left"><img src="images/ewm.gif" /></div>
+                <div class="foot2 left color_9">
+                    <p class="color_c"><a href="/about/">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/about/10">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/news/">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/ann/">网站公告</a></p>
+                    <p>Copyright © 2015  版权所有 </a></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+		<script type="text/javascript">
+			jQuery(".slideBox").slide({ mainCell: ".banner ul", autoPlay: true, effect: "left", delayTime: 1000, mouseOverStop: false });
+			jQuery(".txtScroll-left").slide({ titCell: ".hd ul", mainCell: ".bd ul", autoPage: true, effect: "left", delayTime: 700, pnLoop: false, trigger: "click", mouseOverStop: false });
+		</script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML><HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312"> 
+<TITLE>错误：您所请求的网址（URL）无法获取</TITLE>
+<STYLE type="text/css"><!--BODY{background-color:#ffffff;font-family:verdana,sans-serif}PRE{font-family:sans-serif}--></STYLE>
+</HEAD><BODY>
+<H1>错误</H1>
+<H2>您所请求的网址（URL）无法获取</H2>
+<HR noshade size="1px">
+<P>
+当尝试读取以下网址（URL）时：
+<A HREF="http://static.yuncar.173cms.com/www/images/img1.jpg">http://static.yuncar.173cms.com/www/images/img1.jpg</A>
+<P>
+发生了下列的错误：
+<UL>
+<LI>
+<STRONG>
+Connection to 192.168.4.21 Failed
+<BR>
+连接失败
+</STRONG>
+</UL>
+
+<P>
+系统返回以下内容：
+<PRE><I>    (113) No route to host</I></PRE>
+
+<P>
+The remote host or network may be down.  Please try the request again.
+<BR>
+您要连结的网络服务器或网络可能发生故障。请稍后再试。
+</P>
+<P>本缓存服务器管理员：<A HREF="mailto:root?subject=CacheErrorInfo%20-%20ERR_CONNECT_FAIL&amp;body=CacheHost%3A%20www.stsfksdflsd.com%0D%0AErrPage%3A%20ERR_CONNECT_FAIL%0D%0AErr%3A%20(113)%20No%20route%20to%20host%0D%0ATimeStamp%3A%20Fri,%2027%20Nov%202015%2014%3A38%3A46%20GMT%0D%0A%0D%0AClientIP%3A%20118.123.16.3%0D%0AServerIP%3A%20192.168.4.21%0D%0A%0D%0AHTTP%20Request%3A%0D%0AGET%20%2Fwww%2Fimages%2Fimg1.jpg%20HTTP%2F1.0%0AHost%3A%20static.yuncar.173cms.com%0D%0AAccept%3A%20image%2Fwebp,image%2F*,*%2F*%3Bq%3D0.8%0D%0AUser-Agent%3A%20Mozilla%2F5.0%20(Windows%20NT%206.1%3B%20WOW64)%20AppleWebKit%2F537.36%20(KHTML,%20like%20Gecko)%20Chrome%2F46.0.2490.80%20Safari%2F537.36%0D%0AReferer%3A%20http%3A%2F%2Fwww.168parking.com%2F%0D%0ADontTrackMeHere%3A%20gzip,%20deflate,%20sdch%0D%0AAccept-Language%3A%20zh-CN,zh%3Bq%3D0.8,ja%3Bq%3D0.6,ko%3Bq%3D0.4%0D%0AVia%3A%201.1%20img3%20(squid%2F3.0.STABLE20)%0D%0AX-Forwarded-For%3A%20115.214.194.200%0D%0ACache-Control%3A%20max-age%3D0%0D%0AConnection%3A%20keep-alive%0D%0A%0D%0A%0D%0A">root</A>
+
+<br>
+<hr>
+<div id="footer">
+Generated Fri, 27 Nov 2015 14:38:46 GMT by www.stsfksdflsd.com (squid/3.0.STABLE20)
+</div>
+</body></html>
