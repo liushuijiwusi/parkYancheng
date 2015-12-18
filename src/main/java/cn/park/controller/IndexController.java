@@ -10,9 +10,8 @@ public class IndexController {
 	public String index(){
 		return "index";
 	}
-	@RequestMapping("/test")
-	@ResponseBody
+	@RequestMapping("/help")
 	public String index1(){
-		return "test success";
+		return "help";
 	}
 }

@@ -77,46 +77,40 @@
                             <li  >
                                 <a href="/">首 页</a></li@Html>
                             </li>
-                            <li class="on"><a href="login">个人中心</a></li>
-                            <li ><a href="/map">停车场搜索</a></li>
-                            <li ><a href="/help">停车指南</a></li>
-                            <li><a href="/feedback/">投诉建议</a></li>
-                            <li ><a href="/partner">加盟者</a></li>
+                            <li class="on"><a href="login">管理中心</a></li>
+                            <li ><a href="map">停车场搜索</a></li>
+                            <li ><a href="help">停车指南</a></li>
+                            <li><a href="feedback">投诉建议</a></li>
                         </ul>
-                        <div class="search_i  right relative">
-                            <form action="/help/" method="post" onsubmit="return checksearch()">
-                                <script>
-                                    function checksearch() {
-                                        if ($('#keywords').val().replace(/\s/ig, '') == '') {
-                                            $('#keywords').focus();
-                                            return false;
-                                        }
-                                        window.location.href = '/search/' + escape($('#keywords').val());
-                                        return false;
-                                    }
-                                </script>
-                                <input class="input_1 font14 radius_3" type="text" onblur="if(this.value=='') this.value='请输入关建字'" onclick="if(this.value=='请输入关建字') this.value=''" value="请输入关建字" name="keywords" id="keywords" />
-                                <input class="but_1 absolute pointer" type="submit" name="button" id="button" value="" />
-                            </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
            <div class="web_widht p_tb50 clearfix" style="padding-bottom:140px;">
                 <div class="vip_nav left radius_3 font16">
-                    <h1 class="font30 color_f text_center">个人中心</h1>
+                    <h1 class="font30 color_f text_center">管理中心</h1>
                     <div id="left_head">
                         <dl>
-                            <dt class="on"><a href="#">基础服务<i class="i"></i></a></dt>
+                            <dt class="on"><a href="#">基础管理<i class="i"></i></a></dt>
                             <dd>
                                 <ul>
-                                    <li class="on"><i class="i"></i><a href="">中心首页</a></li>
-                                    <li><i class="i"></i><a href="parking.html" rel="order">停车记录</a></li>
-                                    <li><i class="i"></i><a href="#" rel="reservation">预约记录</a></li>
-                                    <li><i class="i"></i><a href="#" rel="car">我的车辆</a></li>
-                                    <li><i class="i"></i><a href="#" rel="monthcard">我的月卡</a></li>
-                                    <li><i class="i"></i><a href="#" rel="balance">电子钱包</a></li>
-                                    <li><i class="i"></i><a href="#" rel="consume">消费记录</a></li>
+                                    <li ><i class="i"></i><a href="">车位信息</a></li>
+                                    <li ><i class="i"></i><a href="parkchart" >流量图</a></li>
+                                    <li class="on"><i class="i"></i><a href="parkupdate" >车位更新</a></li>
+                                    <li><i class="i"></i><a href="announcement" >公告管理</a></li>
+                                    <li><i class="i"></i><a href="log" >日志管理</a></li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+                          <dl>
+                            <dt class="on"><a href="#">用户管理<i class="i"></i></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><i class="i"></i><a href="#" rel="info">查看用户</a></li>
+                                    <li><i class="i"></i><a href="#" rel="password">增删用户</a></li>
+                                    <li><i class="i"></i><a href="#" rel="paypassword">权限管理</a></li>
+                                    <li><i class="i"></i><a href="#" rel="paypassword">用户日志</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -126,7 +120,6 @@
                                 <ul>
                                     <li><i class="i"></i><a href="#" rel="info">修改资料</a></li>
                                     <li><i class="i"></i><a href="#" rel="password">修改登录密码</a></li>
-                                    <li><i class="i"></i><a href="#" rel="paypassword">修改支付密码</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -140,18 +133,7 @@
                     
 
 <div id="right_con">
-    <div class="vip_bok1 clearfix">
-        <div class="acc_num left clearfix">
-            <div class="port_r left font18 color_9 lh_30">
-                <h3 class="font18"><b class="color_3">停车网友</b>&nbsp;&nbsp;您好！</h3>
-                <p>帐号：186****2268</p>
-            </div>
-        </div>
-        <div class="the_bal left">
-            <br /><br /><br /><h1 class="font24 color_0">余额：<b class="red">￥0</b></h1><br />
-            <a class="but_a back_green color_f radius_3" href="#" id="recharge_a">立即充值</a>&nbsp;&nbsp;<a class="but_a back_orange color_f radius_3" href="#" id="withdraw_a">提现</a>
-        </div>
-    </div>
+
 
         <div class="vip_bok3">
             <div class="title3 relative"><h1 class="green font24">停车记录</h1><a class="more i" href="#" id="order_a"></a></div>
@@ -185,9 +167,9 @@
 
         <div class="foot back_white">
             <div class="web_widht">
-
-                <div class="foot2 left color_9" style="padding: auto">
-          
+                <div class="ewm left"><img src="images/ewm.gif" /></div>
+                <div class="foot2 left color_9">
+                    <p class="color_c"><a href="/about/">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/about/10">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/news/">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/ann/">网站公告</a></p>
                     <p>Copyright © 2015  版权所有 </a></p>
                 </div>
                 <div class="clear"></div>

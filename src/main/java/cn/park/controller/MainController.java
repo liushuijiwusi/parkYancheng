@@ -3,6 +3,9 @@ package cn.park.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,13 +19,26 @@ public class MainController {
 		return "index";
 	}
 	@RequestMapping("/login")
-	public String login(){
+	public String login(HttpSession session){
 		//System.out.println(111);
-		return "login";
+		if (session.getAttribute("username")==null) {
+			return "login";
+		}
+		else if ((boolean)session.getAttribute("isAdmin")==true) {
+			return "parkinfo";
+		}
+		else {
+			return "my";
+		}
+		
 	}
 	@RequestMapping("/map")
 	public String map(){
 		return "map";
+	}
+	@RequestMapping("/my")
+	public String my(){
+		return "my";
 	}
 	@RequestMapping("/parking")
 	public String parking(){
@@ -32,6 +48,11 @@ public class MainController {
 	public String pay(){
 		return "pay";
 	}
+	@RequestMapping("/manage")
+	public String manage(){
+		return "parkinfo";
+	}
+
 	@RequestMapping("/hello")
 	@ResponseBody
 	public Map<String, String> hello(){

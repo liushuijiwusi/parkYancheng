@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>盐城城南新区智慧停车场 </title>
+    <title>9Bit </title>
     <meta name="keywords" value="江苏九比特" />
     <meta name="description" />
     <link href="css/body.css" rel="stylesheet" type="text/css" /> 
@@ -37,7 +37,7 @@
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
-                    <h1>盐城城南新区智慧停车场 </h1>
+                    <div class="logo left" ><a href="/"><img src="images/logo.png" style="height:80px;"/></a></div>
                     <div class="log_state right font16" id="login_status" style="display:block">
                         <a href="login" class="log">登录</a><a href="register" class="reg">注册</a>
                     </div>
@@ -45,64 +45,75 @@
                 <div class="nav font16">
                     <div class="clearfix web_widht">
                         <ul class="clearfix left">
-                            <li  class="on">
+                            <li >
                                 <a href="/">首 页</a></li@Html>
                             </li>
                             <li><a href="login">个人中心</a></li>
                             <li ><a href="map">停车场搜索</a></li>
-                            <li ><a href="pay">停车指南</a></li>
+                            <li  class="on"><a href="/help">停车指南</a></li>
                             <li><a href="feedback">投诉建议</a></li>
-                           
+
                         </ul>
-        
+                  
                     </div>
                 </div>
             </div>
-<div id="slideBox" class="slideBox">
-    <div class="hd">
-        <ul></ul>
-    </div>
-    <div class="banner">
-        <ul>
-        <li style="background:#63ecd4 url(images/photo1.png) no-repeat center top;">
-            <a href="/partner" target="_blank"></a>
-        </li>
-        <li style="background:#63ecd4 url(images/photo2.png) no-repeat center top;">
-            <a href="login" target="_blank"></a>
-        </li>
-        </ul>
-    </div>
-    <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-    <a class="prev" href="javascript:void(0)"></a>
-    <a class="next" href="javascript:void(0)"></a>
-</div>
+<div class="faq web_widht p_tb50 clearfix">
 
-<div class="web_widht">
-    <div class="news_i radius_3">
-        <div class="laba"></div>
-        <div class="txtScroll-left right">
-            <div class="bd left">
-                <ul>
-                <li>2015-09-20<a href="/ann/detail_8">热烈祝贺江苏九比特测试版上线了！！！</a></li>
-                </ul>
-            </div>
-            <div class="hd right relative"><a class="prev" href="javascript:;"></a><a class="next" href="javascript:;"></a></div>
+    <div class="faq_l left">
+
+        <div class="search_i relative"><form action="/" method="get" onsubmit="return checkhelpsearch()"><script>
+            function checkhelpsearch() {
+                if ($('#helpkeywrods').val() == '' || $('#helpkeywrods').val() == '请输入关建字') {
+                    $('#helpkeywrods').focus();
+                    return false;
+                }
+                return true;
+            }</script>
+        <input class="input_1 font14 radius_3" type="text" onblur="if(this.value=='') this.value='请输入关建字' onclick="if(this.value=='请输入关建字') this.value="" value='请输入关建字' name="keywords" id="helpkeywrods">
+    <input class="but_1 absolute pointer" type="submit" name="button" id="button" value="">
+</form>
+        </div>
+
+        <div class="faq_title font18 m_t10">
+            <ul class="clearfix">
+                <li><a href="help/">所有问题</a></li>
+        <li><a href="list_7">关于停车</a></li>
+        <li class="hover"><a href="pay.html">关于缴费</a></li>
+
+            </ul>
+        </div>
+        <div id="con_four_1" class="faq_list">
+            <ul>
+                <li>
+                    <h1><a href="http://www.168parking.com/help/detail_5">如何进行快速停车缴费？</a></h1>
+                    <p>根据相关法律法规，您的微博发布内容不符合网络使用要求</p>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="faq_r right">
+        <div class="guide"><img src="images/zl.gif"></div>
+        <div class="hot_faq back_white radius_3 m_t10">
+            <h1 class="title1 font18 color_3 p_20">热门问题</h1>
+            <ul>        <li><a href="http://www.168parking.com/help/detail_6">·&nbsp;如何下载APP</a></li>
+        <li><a href="http://www.168parking.com/help/detail_5">·&nbsp;如何进行快速停车缴费？</a></li>
+
+            </ul>
         </div>
     </div>
 
-    <div class="dist font24 radius_3 relative text_center">我们盐城目前共有 <b class="font36 color_f">7</b> 个停车场 <b class="font36 color_f">16299</b> 个停车位 <a href="/map/" class="i"><img src="images/ico3.png" /></a></div>
-
-   
-
-<div class="back_white p_tb50">
-    <div class="news_list web_widht">
-        <div class="title color_3 font24">最新公告&nbsp;&nbsp;<span class="color_c">LATEST NEWS</span></div>
-
-    </div>
 </div>
+
+
+
         <div class="foot back_white">
-            <div class="web_widht">               
-                <div class="foot2 left color_9">                  
+            <div class="web_widht">
+                <div class="ewm left"><img src="images/ewm.gif" /></div>
+                <div class="foot2 left color_9">
+                    <p class="color_c"><a href="/about/">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/about/10">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/news/">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/ann/">网站公告</a></p>
                     <p>Copyright © 2015  版权所有 </a></p>
                 </div>
                 <div class="clear"></div>

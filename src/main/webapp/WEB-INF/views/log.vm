@@ -1,0 +1,2 @@
+#set($layout = "manageLayout.vm")
+<h1>我是log </h1>

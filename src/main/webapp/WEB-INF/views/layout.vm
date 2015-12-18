@@ -59,22 +59,7 @@
                 </div>
             </div>
 <div id="slideBox" class="slideBox">
-    <div class="hd">
-        <ul></ul>
-    </div>
-    <div class="banner">
-        <ul>
-        <li style="background:#63ecd4 url(images/photo1.png) no-repeat center top;">
-            <a href="/partner" target="_blank"></a>
-        </li>
-        <li style="background:#63ecd4 url(images/photo2.png) no-repeat center top;">
-            <a href="login" target="_blank"></a>
-        </li>
-        </ul>
-    </div>
-    <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-    <a class="prev" href="javascript:void(0)"></a>
-    <a class="next" href="javascript:void(0)"></a>
+    $screen_content
 </div>
 
 <div class="web_widht">
