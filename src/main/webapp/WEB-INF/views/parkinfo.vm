@@ -1,45 +1,32 @@
 #set($layout = "manageLayout.vm")
 <script src="js/parkinfo.js"></script>
-<script src="js/jquery.json-2.4.min.js"></script>
 <script src="js/alert.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/Area.js"></script>
-<link href="css/tables.css" rel="stylesheet">
-<link href="css/master.css" rel="stylesheet">
-<link href="css/bootstrap.css" rel="stylesheet">
-<div class="data">
-<div class="row"  style="padding-top:50px">
-<div class="box grid_12" >
-    
-          <table class="display table table-hover  table-condensed  table-bordered" id='parkTable' style="font-size:12px;" >
+
+<div style="padding-top:12%;" >   
+          <table class="table table-hover  table-condensed  table-bordered"  style="font-size:12px;" >
            <thead>
             <tr>          
-					<th ><span style="padding-left:5%">Id</span></th>		
-					<th><span style="padding-left:5%">名称</span></th>
-					<th><span style="padding-left:5%">进出口数</span></th>
-					<th><span style="padding-left:5%">车位数</span></th>
-					<th><span style="padding-left:5%">剩余车位数</span></th>
-					<th><span style="padding-left:5%">计费标准(白天)</span></th>
-					<th><span style="padding-left:5%">计费标准(晚上)</span></th>
-					<th><span style="padding-left:5%">状态</span></th>
-					<th><span style="padding-left:5%">是否免费</span></th>
-					<th><span style="padding-left:5%">楼层数</span></th>	
-					<th><span style="padding-left:5%">类型</span></th>
-					<th><span style="padding-left:5%">位置</span></th>
-					<th><span style="padding-left:5%">日期</span></th>	
+					<th ><span >Id</span></th>		
+					<th><span >名称</span></th>
+					<th><span>进出口数</span></th>
+					<th><span >车位数</span></th>
+					<th><span>剩余车位</span></th>
+					<th><span >计费(日)</span></th>
+					<th><span>计费(夜)</span></th>
+					<th><span >状态</span></th>
+					<th><span>是否免费</span></th>
+					<th><span>楼层数</span></th>	
+					<th><span>类型</span></th>
+					<th><span>位置</span></th>
+					<th><span >日期</span></th>	
             </tr>
           </thead>
           <tbody id="parkBody"></tbody>
           </table>
 		   
         </div>
-        </div>
-</div>
-<div id='showMessage'>
-</div>
 
-<div id='showErrorMessage'>
-</div>
 <script>
 $(document).ready(function(){
 //	initComplexArea('seachprov', 'seachcity', 'seachdistrict', area_array, sub_array, '44', '0', '0');

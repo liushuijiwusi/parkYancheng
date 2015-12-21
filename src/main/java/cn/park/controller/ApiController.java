@@ -25,7 +25,7 @@ import cn.park.service.HttpUtil;
 import cn.park.service.Utility;
 @Controller
 public class ApiController {
-	
+	//accessController
 	@RequestMapping(value="/getAccessDetail",method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public String accessIndex(HttpServletRequest request,@RequestParam("low")int low, @RequestParam("count")int count,
@@ -42,17 +42,26 @@ public class ApiController {
 	}
 	@RequestMapping(value = "/getHourCountByPark", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public String getHourCountByPark(@RequestBody Map<String, Object> args) throws ParseException{
+	public Object getHourCountByPark(@RequestBody Map<String, Object> args) throws ParseException{
 		String url = "http://120.25.153.123/park/getHourCountByPark";
 		Map<String, Object> result = HttpUtil.post(url, args);
-		return Utility.gson.toJson(result.get("body"));
+		return result.get("body");
 	}
+	@RequestMapping(value = "/getDayCountByPark", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getMonthCountByPark(@RequestBody Map<String, Object> args){	
+		String url = "http://120.25.153.123/park/getDayCountByPark";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	
+	//parkController
 	@RequestMapping(value = "/getPark/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public String getParkById(@PathVariable int id){
+	public Object getParkById(@PathVariable int id){
 		String url = "http://120.25.153.123:8080/park/getPark/"+id;
 		Map<String, Object> result = HttpUtil.get(url);
-		return Utility.gson.toJson(result.get("body"));
+		return result.get("body");
 	}
 
 	@RequestMapping(value = "/getParks", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
@@ -75,10 +84,10 @@ public class ApiController {
 	}
 	@RequestMapping(value = "/update/parkFields", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public String updateParkFields(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/park/getParkByName";
+	public Object updateParkFields(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/park/update/parkFields";
 		Map<String, Object> result = HttpUtil.post(url, args);
-		return Utility.gson.toJson(result.get("body"));
+		return result.get("body");
 	}
 	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody

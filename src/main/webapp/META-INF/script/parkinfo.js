@@ -254,7 +254,7 @@
 		
 
 		
-		var data = {'low': 0, 'count': 15, 'T': new Date().getTime()};
+		var data = {'low': 0, 'count': 30, 'T': new Date().getTime()};
 		$.ajax({
 			//url:$.fn.config.webroot + "/getParkDetail?low=" + low + "&count=" + count + "&_t=" + new Date().getTime(),
 			url:  "getParkDetail" ,
@@ -304,9 +304,9 @@
 			tr.append('<td longitude='+ data[i]['longitude'] +' latitude=' + data[i]['latitude'] + ' >' + data[i]['position']+ '</td>');
 			tr.append('<td>' + data[i]['date']+ '</td>');
 			if( i % 2 == 0){
-				tr.addClass('success');
+				tr.addClass('info');
 			}else{
-				tr.addClass('active');
+				tr.addClass('warning');
 			}
 			parkBody.append(tr);
 		}

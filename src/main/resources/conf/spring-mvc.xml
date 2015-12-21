@@ -23,7 +23,7 @@
 			</list>
 		</property>
 	</bean>
-
+  
 	<mvc:annotation-driven />
   <!-- 模板信息设置 -->  
    <bean id="velocityConfigurer"  
