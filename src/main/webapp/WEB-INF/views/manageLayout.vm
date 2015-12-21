@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="js/artTemplate.js"></script>
     <script type="text/javascript" src="js/alert.js"></script>
     <script type="text/javascript" src="js/pagination.js"></script>
-    <script type="text/javascript" src="js/jquery.uploadify.min.js"></script>
+   
     <script type="text/javascript" src="js/region.js"></script>
     <script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/managelayout.js" type="text/javascript" charset="utf-8"></script>

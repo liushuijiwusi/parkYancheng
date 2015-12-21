@@ -80,6 +80,21 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return Utility.gson.toJson(result.get("body"));
 	}
+	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getParkDetail(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/park/getParkDetail";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	@RequestMapping(value = "/getParkCount", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getParkCount(){
+		String url = "http://120.25.153.123:8080/park/getParkCount/";
+		Map<String, Object> result = HttpUtil.get(url);
+
+		return result.get("body");
+	}
 	@RequestMapping(value = "/authorityWeb", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	public Object authorityWeb(@RequestParam("username")String username,@RequestParam("password")String password,HttpSession session){
 		Map<String, Object> args=new HashMap<String, Object>();
