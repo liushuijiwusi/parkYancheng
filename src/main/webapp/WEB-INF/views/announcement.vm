@@ -1,2 +1,21 @@
 #set($layout = "manageLayout.vm")
-<h1>我是 announcement</h1>
+
+<table class="table table-hover  table-condensed  table-bordered"  style="font-size:12px;" >
+           <thead>
+            <tr>          
+					<th ><span >Id</span></th>		
+					<th><span >名称</span></th>
+					<th><span>进出口数</span></th>
+					<th><span >车位数</span></th>
+					<th><span>剩余车位</span></th>
+					<th><span >计费(日)</span></th>
+					<th><span>计费(夜)</span></th>
+					<th><span >状态</span></th>
+					<th><span>是否免费</span></th>
+					<th><span>楼层数</span></th>	
+					<th><span>类型</span></th>
+					<th><span>位置</span></th>
+					<th><span >日期</span></th>	
+            </tr>
+          </thead>
+			</table>

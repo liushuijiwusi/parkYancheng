@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ninebit</groupId>
-	<artifactId>parkyanchenga</artifactId>
+	<artifactId>parkYancheng</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>park Maven Webapp</name>
@@ -170,5 +170,15 @@
 	</dependencies>
 	<build>
 		<finalName>parkYanCheng</finalName>
+		<plugins>
+      <plugin>
+		 <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+           </configuration>
+      </plugin>
+    </plugins>
 	</build>
 </project>

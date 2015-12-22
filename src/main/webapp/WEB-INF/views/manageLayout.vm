@@ -3,54 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>9Bit </title>
+    <title>智慧停车场-管理中心</title>
     <meta name="keywords" value="江苏九比特" />
     <meta name="description" />
+
+		<link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/body.css" rel="stylesheet" type="text/css" /> 
+		<link href="css/master.css" rel="stylesheet">
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/web_js.js"></script>
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 	<script type="text/javascript" src="js/artTemplate.js"></script>
     <script type="text/javascript" src="js/alert.js"></script>
     <script type="text/javascript" src="js/pagination.js"></script>
-    <script type="text/javascript" src="js/jquery.uploadify.min.js"></script>
+   <script src="js/jquery.json-2.4.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/region.js"></script>
     <script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/managelayout.js" type="text/javascript" charset="utf-8"></script>
 
-            <script type="text/javascript">
-                $(function () {
-                    $('.map_i li').hover(function () {
-                        $(this).css({ zIndex: '3' }).find('.map_des').show();
-                    }, function () {
-                        $(this).css({ zIndex: '2' }).find('.map_des').hide();
-                    });
-					
-					$('#left_head dd a').click(function () {
-						var rel = $(this).attr('rel');
-						$('#pay_ewm').hide();
-						if (rel != undefined) {
-							$('#left_head li').removeClass('on');
-							$(this).parent().addClass('on');
-							user.init(rel);
-
-							return false;
-						}
-					});
-					$('#left_head dt a').click(function () {
-						if ($(this).parent().hasClass('on')) {
-							$(this).parent().removeClass('on');
-						} else {
-							$(this).parent().addClass('on');
-						}
-						$('#pay_ewm').hide();
-						$(this).parent().next('dd').toggle();
-						return false;
-					});
-                });
-            </script>
-
-    
+          
 <style>
     .foot {
         background-color: #f2f2f3;
@@ -67,9 +40,9 @@
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
-                    <div class="logo left" ><a href="/"><img src="images/logo.png" style="height:80px;"/></a></div>
-                    <div class="log_state right font16" id="login_status" style="display:block">
-                        <a href="login" class="log">登录</a><a href="register" class="reg">注册</a>
+                    
+                    <div class="log_state right font16" id="login_status" style="display:block;padding-right:60px">
+                        <a href="#" class="log" ">已登录</a>
                     </div>
                 </div>
                 <div class="nav font16">
@@ -131,7 +104,7 @@
                     </div>
                 </div>
 
-  <div class="vip_con right back_white radius_3" id="right_contain">
+  <div class="vip_con right back_white radius_3" id="right_contain" >
                     
 
 <div id="right_con">
@@ -142,7 +115,6 @@
 
         <div class="foot back_white">
             <div class="web_widht">
-                <div class="ewm left"><img src="images/ewm.gif" /></div>
                 <div class="foot2 left color_9">
                     <p class="color_c"><a href="/about/">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/about/10">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/news/">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/ann/">网站公告</a></p>
                     <p>Copyright © 2015  版权所有 </a></p>
