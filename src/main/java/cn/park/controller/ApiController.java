@@ -63,11 +63,11 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
-
+//获取包含盐城的数据
 	@RequestMapping(value = "/getParks", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParks(ModelMap modelMap, HttpServletRequest request, HttpSession session){
-		String url = "http://120.25.153.123:8080/park/getParks/";
+		String url = "http://120.25.153.123/parkshow/getParksYancheng";
 		Map<String, Object> result = HttpUtil.get(url);
 
 //		Map<String, Object> data168=new HashMap<>();
@@ -92,7 +92,7 @@ public class ApiController {
 	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParkDetail(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/park/getParkDetail";
+		String url = "http://120.25.153.123/parkshow/getParkDetailYancheng";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
@@ -105,7 +105,7 @@ public class ApiController {
 		return result.get("body");
 	}
 	@RequestMapping(value = "/authorityWeb", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
-	public Object authorityWeb(@RequestParam("username")String username,@RequestParam("password")String password,HttpSession session){
+	public String authorityWeb(@RequestParam("username")String username,@RequestParam("password")String password,HttpSession session){
 		Map<String, Object> args=new HashMap<String, Object>();
 		args.put("username", username);
 		args.put("password", password);
@@ -129,6 +129,6 @@ public class ApiController {
 			return "redirect:/my";
 		}
 	//	 String isAllow=(String) mapdata.get("isAllow");
-		return data;
+		return (String)data;
 	}
 }
