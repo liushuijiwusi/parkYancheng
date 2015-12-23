@@ -22,7 +22,7 @@ public class ManageController {
 	}
 	@RequestMapping("/parkupdate")
 	public String parkupdate(ModelMap modelMap){
-		String url = "http://120.25.153.123:8080/park/getParks/";
+		String url = "http://120.25.153.123/parkshow/getParksYancheng";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
