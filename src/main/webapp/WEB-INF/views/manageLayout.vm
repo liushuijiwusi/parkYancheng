@@ -108,9 +108,10 @@
                     
 
 <div id="right_con">
+	   <div class="vip_bok1 clearfix">
        $screen_content
 </div>
-
+  </div>
 </div>
 
         <div class="foot back_white">

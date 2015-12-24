@@ -21,25 +21,19 @@ public class MainController {
 	@RequestMapping("/login")
 	public String login(HttpSession session){
 		//System.out.println(111);
-		if (session.getAttribute("username")==null) {
-			return "login";
-		}
-		else if ((boolean)session.getAttribute("isAdmin")==true) {
+		 if (session.getAttribute("username")==null||session.getAttribute("isAdmin")==null) {
+				return "login";
+			}
+		 if ((boolean)session.getAttribute("isAdmin")==true) {
 			return "parkinfo";
-		}
-		else {
-			return "my";
-		}
-		
+		}	
+			return "parkinfomy";		
 	}
 	@RequestMapping("/map")
 	public String map(){
 		return "map";
 	}
-	@RequestMapping("/my")
-	public String my(){
-		return "my";
-	}
+
 	@RequestMapping("/parking")
 	public String parking(){
 		return "parking";
@@ -60,14 +54,5 @@ public class MainController {
 		m.put("01", "map01");
 		return m;
 	}
-	@RequestMapping("/hello1")
-	@ResponseBody
-	public String hello1(){
-		return "hello1";
-	}
-	@RequestMapping("/hello2")
-	@ResponseBody
-	public String hello2(){
-		return "hello2";
-	}
+
 }

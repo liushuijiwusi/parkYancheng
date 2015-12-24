@@ -126,6 +126,7 @@ public class ApiController {
 		}
 		 else if (isAllow) {
 			session.setAttribute("username", username);
+			 session.setAttribute("isAdmin", false);
 			return "redirect:/my";
 		}
 	//	 String isAllow=(String) mapdata.get("isAllow");

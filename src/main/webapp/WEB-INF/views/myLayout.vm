@@ -6,6 +6,8 @@
     <title>盐城城南新区智慧停车场 </title>
     <meta name="keywords" value="江苏九比特" />
     <meta name="description" />
+		<link href="css/bootstrap.css" rel="stylesheet">
+
     <link href="css/body.css" rel="stylesheet" type="text/css" /> 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/web_js.js"></script>
@@ -141,44 +143,10 @@
 
 <div id="right_con">
     <div class="vip_bok1 clearfix">
-        <div class="acc_num left clearfix">
-            <div class="port_r left font18 color_9 lh_30">
-                <h3 class="font18"><b class="color_3">停车网友</b>&nbsp;&nbsp;您好！</h3>
-                <p>帐号：186****2268</p>
-            </div>
-        </div>
-        <div class="the_bal left">
-            <br /><br /><br /><h1 class="font24 color_0">余额：<b class="red">￥0</b></h1><br />
-            <a class="but_a back_green color_f radius_3" href="#" id="recharge_a">立即充值</a>&nbsp;&nbsp;<a class="but_a back_orange color_f radius_3" href="#" id="withdraw_a">提现</a>
-        </div>
+ 
+	   $screen_content	
+		
     </div>
-
-        <div class="vip_bok3">
-            <div class="title3 relative"><h1 class="green font24">停车记录</h1><a class="more i" href="#" id="order_a"></a></div>
-            <div class=" table_b">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <th width="12%">车牌号</th>
-                        <th width="18%">停车时间</th>
-                        <th width="30%">停车场</th>
-                        <th width="15%">是否出站</th>
-                        <th width="25%" style="text-align: right;">金额</th>
-                    </tr>
-                    <tr>
-                        <td>{{item.carno}}</td>
-                        <td>{{item.stoptime}}</td>
-                        <td>{{item.parkingname}}</td>
-                        <td class="green" >出站</td>
-                        <td align="right">
-                            <div class="relative tcsf display_bk" orderid="{{item.id}}">
-                               <span class="red">{{item.payedmoney}}</span>元<i class="i"></i>
-                                <div class="tcsf_nr absolute"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
 </div>
 
 </div>

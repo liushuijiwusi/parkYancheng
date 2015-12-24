@@ -3,15 +3,17 @@
 	
 	$.fn.map.initial=function(){
 		mapInitial();
-		getData();	
 	};
 	var map;
 	var point;
 	var mapInitial=function(){
-		map = new BMap.Map("map");
-		point = new BMap.Point(118.8, 32.0625);
-		map.centerAndZoom(point, 13);	
+		map = new BMap.Map("mapyancheng");
+		point = new BMap.Point(120.15755, 33.35);
+		map.centerAndZoom(point, 15);	
 		map.enableScrollWheelZoom();	
+		getData();
+		var marker = new BMap.Marker(new BMap.Point(120.15755,33.36664));  // 创建标注
+		//map.addOverlay(marker);     
 	};
 	var data_info;
 	var opts = {
@@ -34,7 +36,7 @@
 	var showparks=function(){
 		
 		for(var i=0;i<data_info.length;i++){
-			var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+			var marker = new BMap.Marker(new BMap.Point(data_info[i][1],data_info[i][0]));  // 创建标注
 			var content = data_info[i][2];
 			map.addOverlay(marker);               // 将标注添加到地图中
 			addClickHandler(content,marker);
@@ -42,7 +44,7 @@
 	}
 	var getData=function(){
 		$.ajax({
-			url:'/parkYanCheng/getParks',
+			url:'getParks',
 			type: 'get',
 			contentType: 'application/json;charset=utf-8',			
 			datatype: 'json',
