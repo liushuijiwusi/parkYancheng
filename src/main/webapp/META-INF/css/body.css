@@ -338,7 +338,7 @@ height: expression(this.height > 5000  && this.width / 1120px < this.height / 50
     .foot .ewm img {
         width:100px;
     }
-.container{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
+.containerx{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
 .container_page{padding-bottom:140px;/*padding等于footer的高度*/}
 
 .pager a,.pager span { display:inline-block; line-height:30px; padding:0 5px; min-width:20px; margin:0 5px; border:1px solid #ccc;}
