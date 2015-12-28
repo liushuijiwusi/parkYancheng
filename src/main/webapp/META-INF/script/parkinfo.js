@@ -254,7 +254,7 @@
 		
 
 		
-		var data = {'low': 0, 'count': 30, 'T': new Date().getTime()};
+		var data = {'low': 0, 'count': 70, 'T': new Date().getTime()};
 		$.ajax({
 			//url:$.fn.config.webroot + "/getParkDetail?low=" + low + "&count=" + count + "&_t=" + new Date().getTime(),
 			url:  "getParkDetail" ,
