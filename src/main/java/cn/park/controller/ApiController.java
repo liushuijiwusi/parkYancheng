@@ -101,7 +101,13 @@ public class ApiController {
 	public Object getParkCount(){
 		String url = "http://120.25.153.123:8080/park/getParkCount/";
 		Map<String, Object> result = HttpUtil.get(url);
-
+		return result.get("body");
+	}
+	@RequestMapping(value="/insert/parkNews")
+	@ResponseBody
+	public Object insertParkNews(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/park/insert/parkNews";
+		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/authorityWeb", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})

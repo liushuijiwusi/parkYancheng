@@ -38,9 +38,9 @@
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
-                    <h1>盐城城南新区智慧停车场 </h1>
+					<div class="logo left" ><a href="/"><img src="images/parkYanchenglogo.gif" style="height:80px;"/></a></div>
                     <div class="log_state right font16" id="login_status" style="display:block">
-                        <a href="login" class="log">登录</a><a href="register" class="reg">注册</a>
+                        <a href="/parkYanCheng/login" class="log">登录</a>
                     </div>
                 </div>
                 <div class="nav font16">

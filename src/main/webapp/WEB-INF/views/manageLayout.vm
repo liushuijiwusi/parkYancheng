@@ -40,8 +40,8 @@
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
-                    
-                    <div class="log_state right font16" id="login_status" style="display:block;padding-right:60px">
+                    <div class="logo left" ><a href="/"><img src="images/parkYanchenglogo.gif" style="height:80px;"/></a></div>
+                    <div class="log_state right font16" id="login_status" style="display:block;">
                         <a href="#" class="log" ">已登录</a>
                     </div>
                 </div>
@@ -73,6 +73,7 @@
                                     <li id="daohang2"><i class="i"></i><a href="parkchart" rel="order">流量图</a></li>
                                     <li id="daohang3"><i class="i"></i><a href="parkupdate" rel="reservation">车位更新</a></li>
                                     <li id="daohang4"><i class="i"></i><a href="announcement" rel="car">公告管理</a></li>
+									<li id="daohang6"><i class="i"></i><a href="announcementview" rel="car">公告查看</a></li>
                                     <li id="daohang5"><i class="i"></i><a href="log" rel="car">日志管理</a></li>
 
                                 </ul>

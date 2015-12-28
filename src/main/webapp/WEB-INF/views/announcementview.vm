@@ -1,0 +1,13 @@
+#set($layout = "manageLayout.vm")
+<div style="padding-top:10%"></div>
+<div class="row" style="padding:12px">
+	<label style="">选择停车场</label>
+    <div style="padding:10px">
+		<select id="park-select" class="form-control" >
+					#foreach( $park in $parks)
+						<option value=$park.id>$park.name</option>
+					#end
+	</select>
+	</div>
+</div>
+			
