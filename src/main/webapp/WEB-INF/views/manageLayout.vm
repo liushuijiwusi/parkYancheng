@@ -42,7 +42,7 @@
                 <div class="web_widht top clearfix">
                     <div class="logo left" ><a href="/"><img src="images/parkYanchenglogo.gif" style="height:80px;"/></a></div>
                     <div class="log_state right font16" id="login_status" style="display:block;">
-                        <a href="#" class="log" ">已登录</a>
+                        <a href="#" class="log" ">已登录</a><a href="http://112.74.109.240/login" class="reg">退出</a>
                     </div>
                 </div>
                 <div class="nav font16">

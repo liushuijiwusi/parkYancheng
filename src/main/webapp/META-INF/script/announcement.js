@@ -13,7 +13,7 @@
 					datatype: 'json',
 					data: $.toJSON({'parkId':parkId, 'header':header,'content':content}),
 					success:function(data){
-						alert(data);
+					//	alert(data);
 						alert("insert success");
 					},
 					error: function(data){
