@@ -1,14 +1,27 @@
 package cn.park.controller;
 
 import java.io.Console;
+import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +30,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.apache.commons.fileupload.DiskFileUpload;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+
+import cn.park.model.Constants;
 
 import cn.park.service.HttpUtil;
 import cn.park.service.Utility;
@@ -63,18 +87,80 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
+	@RequestMapping(value = "/getNewsByParkId/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getNewsByParkId(@PathVariable int id){
+		String url = "http://120.25.153.123/parkshow/getNewsByParkId/"+id;
+		Map<String, Object> result = HttpUtil.get(url);
+		return result.get("body");
+	}
 //获取包含盐城的数据
 	@RequestMapping(value = "/getParks", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParks(ModelMap modelMap, HttpServletRequest request, HttpSession session){
 		String url = "http://120.25.153.123/parkshow/getParksYancheng";
 		Map<String, Object> result = HttpUtil.get(url);
-
-//		Map<String, Object> data168=new HashMap<>();
-//		data168.put("", value)
-		
+	
 		return result.get("body");
 	}
+
+	/**
+	 * 这里这里用的是MultipartFile[] myfiles参数,所以前台就要用<input type="file"
+	 * name="myfiles"/>
+	 * 上传文件完毕后返回给前台[0`filepath],0表示上传成功(后跟上传后的文件路径),1表示失败(后跟失败描述)
+	 */
+	static public int filePrefix = 0;
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	@ResponseBody
+	public String uploadPicture(HttpServletRequest request,
+			HttpServletResponse response) throws UnsupportedEncodingException {
+		String aa=request.getCharacterEncoding();
+		if (request.getCharacterEncoding() == null) {
+		//	request.setCharacterEncoding("UTF-8");//你的编码格式
+			}
+		// 创建一个通用的多部分解析器
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+				request.getSession().getServletContext());
+		// 判断 request 是否有文件上传,即多部分请求
+		if (multipartResolver.isMultipart(request)) {
+			// 转换成多部分request
+			MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
+			// 取得request中的所有文件名
+			Iterator<String> iter = multiRequest.getFileNames();			
+			Map<String, Object> body = new HashMap<String, Object>();
+			List<String> uriList = new ArrayList<String>();
+			while (iter.hasNext()) {
+				// 记录上传过程起始时的时间，用来计算上传时间
+				// 取得上传文件
+				MultipartFile file = multiRequest.getFile(iter.next());
+				if (file != null) {
+					// 取得当前上传文件的文件名称
+					String myFileName = file.getOriginalFilename();
+					// 如果名称不为“”,说明该文件存在，否则说明该文件不存在
+					if (myFileName.trim() != "") {
+						// 重命名上传后的文件名
+						ApiController.filePrefix++;
+						//String fileName = "" + new Date().getTime() + file.getOriginalFilename();
+						String fileName = "" + new Date().getTime() + ApiController.filePrefix;
+						// 定义上传路径
+						String path = Constants.UPLOADDIR + fileName;
+						File localFile = new File(path);
+						try {
+							file.transferTo(localFile);
+						} catch (IllegalStateException | IOException e) {
+							e.printStackTrace();
+							break;
+						}
+						uriList.add(Constants.URL + fileName);
+					}
+				}
+			}
+			body.put("uri", uriList);
+			return Utility.createJsonMsg(1001, "upload file success", body);
+		}
+		return Utility.createJsonMsg(1002, "upload failed");
+	}
+
 	@RequestMapping(value = "/getParkByName", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public String getParkByName(@RequestBody Map<String, Object> args){
@@ -133,7 +219,7 @@ public class ApiController {
 		 else if (isAllow) {
 			session.setAttribute("username", username);
 			 session.setAttribute("isAdmin", false);
-			return "redirect:/my";
+			return "redirect:/parkinfomy";
 		}
 	//	 String isAllow=(String) mapdata.get("isAllow");
 		return (String)data;

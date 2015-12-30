@@ -69,7 +69,7 @@
                             <dt class="on"><a href="#">基础管理<i class="i"></i></a></dt>
                             <dd>
                                 <ul id="daohang">
-                                    <li id="daohang1" ><i class="i"></i><a href="parkinfo">车位信息</a></li>
+                                    <li id="daohang1" ><i class="i"></i><a href="parkinfo">停车场信息</a></li>
                                     <li id="daohang2"><i class="i"></i><a href="parkchart" rel="order">流量图</a></li>
                                     <li id="daohang3"><i class="i"></i><a href="parkupdate" rel="reservation">车位更新</a></li>
                                     <li id="daohang4"><i class="i"></i><a href="announcement" rel="car">公告管理</a></li>

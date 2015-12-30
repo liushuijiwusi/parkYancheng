@@ -1,4 +1,4 @@
-#set($layout = "manageLayout.vm")
+#set($layout = "myLayout.vm")
 <script src="js/announcementview.js"></script>
 <script >
 	$(document).ready(function(){

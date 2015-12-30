@@ -1,0 +1,70 @@
+#set($layout = "myLayout.vm")
+   <link href="css/mainindex.css" rel="stylesheet" />
+<script src="js/parkupdate.js"></script>
+<div class="container-fluid page-breadcrumb" >
+		<div class="row">
+				<div class="col-md-4 col-xs-10 panel top-panel" style="height:90px">
+					<div class="panel-body media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object small" src="images/tcc.png" >
+						</a>
+					  </div>
+					  <div class="media-body">
+						<h4 class="media-heading"> 停车场信息 </h4>
+							<select id="park-select" class="form-control" >
+					#foreach( $park in $parks)
+						<option value=$park.id>$park.name</option>
+					#end
+				</select>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-2 col-xs-10 panel top-panel" style="height:90px">
+					<div class="panel-body media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object small" src="images/sycw.png" >
+						</a>
+					  </div>
+					  <div class="media-body">
+						<h4 class="media-heading"> 空车位 </h4>
+							<span id="leftPortVal" style="color:rgba(242,248,29,1.00);font-size:1.25em">&nbsp</span>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-2 col-xs-10 panel top-panel" style="height:90px">
+					<div class="panel-body media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object small" src="images/rll.png" >
+						</a>
+					  </div>
+					  <div class="media-body">
+						<h4 class="media-heading">日流量</h4>
+					<span id="dayAccessVal" style="color:rgba(242,248,29,1.00);font-size:1.25em"></span>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-2 col-xs-10 panel top-panel" style="height:90px">
+					<div class="panel-body media">
+					  <div class="media-left">
+						<a href="#">
+						  <img class="media-object small" src="images/yll.png" >
+						</a>
+					  </div>
+					  <div class="media-body">
+						<h4 class="media-heading">月流量</h4>														
+						<span id="monthAccessVal" style="color:rgba(242,248,29,1.00);font-size:1.25em"></span>
+					  </div>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<script >
+	$(document).ready(function(){
+	$.fn.parkChart.initial();
+//	setInterval("$.fn.parkChart.initial()",10000);		
+});
+    </script>
