@@ -1,10 +1,19 @@
 package cn.park.model;
 
+import java.sql.Date;
+
+
 public class UserDetail {
-	private int Id;
+	public int Id;
 	private String userName;
 	private String number;
-	
+	public Date date;
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	public int getId() {
 		return Id;
 	}

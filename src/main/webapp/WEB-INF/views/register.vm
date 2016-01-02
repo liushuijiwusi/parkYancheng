@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>登录 </title>
+    <title>9Bit </title>
     <meta name="keywords" value="江苏九比特" />
     <meta name="description" />
     <link href="css/body.css" rel="stylesheet" type="text/css" /> 
@@ -37,25 +37,24 @@
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
-                    <div class="logo left" ><a href="/"><img src="images/parkYanchenglogo.gif" style="height:80px;"/></a></div>
+                    <div class="logo left" ><a href="/"><img src="images/logo.png" style="height:80px;"/></a></div>
                     <div class="log_state right font16" id="login_status" style="display:block">
-                     
+                        <a href="login" class="log">登录</a>
                     </div>
                 </div>
                 <div class="nav font16">
                     <div class="clearfix web_widht">
                         <ul class="clearfix left">
                             <li  >
-                                <a href="/parkYanCheng/">首 页</a></li@Html>
+                                <a href="/">首 页</a></li@Html>
                             </li>
                             <li class="on"><a href="login">个人中心</a></li>
                             <li ><a href="map">停车场搜索</a></li>
                             <li ><a href="help">停车指南</a></li>
                             <li><a href="feedback">投诉建议</a></li>
-
                         </ul>
                         <div class="search_i  right relative">
-                           
+               
                         </div>
                     </div>
                 </div>
@@ -64,8 +63,8 @@
                 <div class="sug_com radius_3 back_white">
                     
 
-<h1 class="text_center p_tb50 green font30 bo_b_hui ">会员登录</h1>
-<form action="/parkYanCheng/authorityWeb" method="post" id="login_from">
+<h1 class="text_center p_tb50 green font30 bo_b_hui ">会员注册</h1>
+<form action="registerYancheng" method="post" id="login_from" >
     <div class=" table_a p_tb50">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -79,13 +78,10 @@
         </table>
     </div>
     <div class="bo_t_hui p_tb50 text_center">
-        <input class="but_a back_green color_f font18 radius_3 pointer" type="submit" name="login_btn" id="login_btn" value="立即登录" />&nbsp;&nbsp;<a href="register">还没账号?立即注册</a>
+        <input class="but_a back_green color_f font18 radius_3 pointer" type="submit" name="login_btn" id="login_btn" value="注册" />&nbsp;&nbsp;
     </div>
 </form>
-<script>
-    
-</script>
-                </div>
+ </div>
             </div>
 
         <div class="">

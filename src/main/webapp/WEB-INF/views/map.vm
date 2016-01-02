@@ -85,7 +85,7 @@
                 <div class="web_widht top clearfix">
                     <div class="logo left" ><a href="/"><img src="images/parkYanchenglogo.gif" style="height:80px;"/></a></div>
                     <div class="log_state right font16" id="login_status" style="display:block">
-                        <a href="login" class="log">登录</a><a href="register" class="reg">注册</a>
+                      <a href="register" class="reg">注册</a>
                     </div>
                 </div>
                 <div class="nav font16">
@@ -98,15 +98,9 @@
                             <li class="on"><a href="/map">停车场搜索</a></li>
                             <li ><a href="/help">停车指南</a></li>
                             <li><a href="/feedback">投诉建议</a></li>
-                            <li ><a href="/partner">加盟者</a></li>
+
                         </ul>
-                        <div class="search_i  right relative">
-                            <form action="/help/" method="post" onsubmit="return checksearch()">
-                            
-                                <input class="input_1 font14 radius_3" type="text" onblur="if(this.value=='') this.value='请输入关建字'" onclick="if(this.value=='请输入关建字') this.value=''" value="请输入关建字" name="keywords" id="keywords" />
-                                <input class="but_1 absolute pointer" type="submit" name="button" id="button" value="" />
-                            </form>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

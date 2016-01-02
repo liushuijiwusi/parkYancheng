@@ -83,7 +83,7 @@
                             <dt class="on"><a href="#">用户管理<i class="i"></i></a></dt>
                             <dd>
                                 <ul id="daohanguser">
-                                    <li id="daohanguser1"><i class="i"></i><a href="#" rel="info">查看用户</a></li>
+                                    <li id="daohanguser1"><i class="i"></i><a href="usersview" rel="info">查看用户</a></li>
                                     <li id="daohanguser2"><i class="i"></i><a href="#" rel="password">增删用户</a></li>
                                     <li id="daohanguser3"><i class="i"></i><a href="#" rel="paypassword">权限管理</a></li>
                                     <li id="daohanguser4"><i class="i"></i><a href="#" rel="paypassword">用户日志</a></li>

@@ -57,4 +57,8 @@ public class ManageController {
 	public String log(){
 		return "log";
 	}
+	@RequestMapping("/usersview")
+	public String usersview(){
+		return "usersView";
+	}
 }

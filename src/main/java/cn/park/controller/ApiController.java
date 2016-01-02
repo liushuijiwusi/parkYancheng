@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -78,7 +79,7 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
-	
+
 	//parkController
 	@RequestMapping(value = "/getPark/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
@@ -141,7 +142,7 @@ public class ApiController {
 						// 重命名上传后的文件名
 						ApiController.filePrefix++;
 						//String fileName = "" + new Date().getTime() + file.getOriginalFilename();
-						String fileName = "" + new Date().getTime() + ApiController.filePrefix;
+						String fileName = UUID.randomUUID()+myFileName.substring(myFileName.lastIndexOf("."));
 						// 定义上传路径
 						String path = Constants.UPLOADDIR + fileName;
 						File localFile = new File(path);
@@ -211,13 +212,25 @@ public class ApiController {
 		 System.out.println(mapdata.get("isAllow"));
 		 Boolean isAllow=(Boolean) mapdata.get("isAllow");
 		 Boolean isAdmin=(Boolean) mapdata.get("isAdmin");
-		 if (isAdmin) {
+		 if (isAdmin!=null&&isAdmin) {
 			 session.setAttribute("username", username);
 			 session.setAttribute("isAdmin", true);
 			return "redirect:/manage";
 		}
-		 else if (isAllow) {
+		 else if (isAllow!=null&&isAllow) {
 			session.setAttribute("username", username);
+			 session.setAttribute("isAdmin", false);
+			return "redirect:/parkinfomy";
+		}
+		 //访问用户表 看是否允许访问
+		 String url1 = "http://120.25.153.123/parkshow/userValidation";
+		 Map<String, Object> result1 = HttpUtil.post(url1, args);
+		 Object object1=result1.get("body");
+		 Map<String, Object> mapdata1=gson.fromJson((String) object1,new TypeToken<Map<String, Object>>(){
+         }.getType() );
+		 String status=(String) mapdata1.get("status");
+		 if (status.equals("1001")) {
+			 session.setAttribute("username", username);
 			 session.setAttribute("isAdmin", false);
 			return "redirect:/parkinfomy";
 		}

@@ -1,0 +1,47 @@
+#set($layout = "manageLayout.vm")
+<script src="js/usersView.js"></script>
+<link href="css/tables.css" rel="stylesheet">
+<link href="css/master.css" rel="stylesheet">
+<div id="user">
+<div class="row" style="width:100%">
+<div class="box grid_12" style="width:100%">
+        <div class="box-head" style="height:40px"><h2 >用户管理</h2></div>                 
+        
+      
+	   
+        <div class="box-content no-pad">
+         <ul class="table-toolbar" #if(!$isAdmin) hidden#end>
+         
+            <li id="refresh" ><a  href="#" ><img src="images/refresh.png" style="width:18px;height:auto;" alt="" /> 刷新</a></li>
+            <li><a href="#"><img src="images/plus.png" alt="" /> 添加</a></li>           
+            <li><a href="#"><img src="images/up.png" alt="" /> 更新</a></li>
+            <li  id=""><a href="#"><img src="images/delete.png" alt="" /> 删除</a></li>
+             <li id=''><a href="#"><img src="images/Search.png" style="width:18px;height:auto;" alt="" /> 查找</a></li>
+          </ul>
+          <table class="table table-hover  table-condensed table-bordered"  style="font-size:12px" id='accessTable' >
+           <thead>
+            <tr>
+             <th><span style=""><input type="checkbox" /></div></th>
+					<th ><span style="">ID</div></th>		
+					<th><span style="">用户名</div></th>
+					<th><span style="">密码</div></th>
+					<th><span style="">注册时间</div></th>
+            </tr>
+          </thead>
+          	<tbody id="userBody">		
+			</tbody>
+          </table>
+		    </div>
+		    <div id='pagination'></div>
+        </div>
+        </div>
+	<div >
+	
+
+
+<script>
+$(document).ready(function(){
+	$("#userBody").user.initial();
+});
+
+</script>
