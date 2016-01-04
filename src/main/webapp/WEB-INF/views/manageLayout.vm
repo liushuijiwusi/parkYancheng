@@ -49,12 +49,11 @@
                     <div class="clearfix web_widht">
                         <ul class="clearfix left">
                             <li  >
-                                <a href="/">首 页</a></li@Html>
+                                <a href="/parkYanCheng/">首 页</a></li@Html>
                             </li>
                             <li class="on"><a href="login">管理中心</a></li>
                             <li ><a href="map">停车场搜索</a></li>
-                            <li ><a href="help">停车指南</a></li>
-                            <li><a href="feedback">投诉建议</a></li>
+
 
                         </ul>
 
@@ -84,7 +83,7 @@
                             <dd>
                                 <ul id="daohanguser">
                                     <li id="daohanguser1"><i class="i"></i><a href="usersview" rel="info">查看用户</a></li>
-                                    <li id="daohanguser2"><i class="i"></i><a href="#" rel="password">增删用户</a></li>
+                                    <li id="daohanguser2"><i class="i"></i><a href="usermanage" rel="password">增删用户</a></li>
                                     <li id="daohanguser3"><i class="i"></i><a href="#" rel="paypassword">权限管理</a></li>
                                     <li id="daohanguser4"><i class="i"></i><a href="#" rel="paypassword">用户日志</a></li>
                                 </ul>
@@ -101,7 +100,7 @@
                         </dl>
                     </div>
                     <div class="img_bfb m_t10">
-                        <input class="but_a back_orange color_f font18 radius_3 pointer" style="width:100%" type="button" id="logout_btn" value="退出登录" />
+                        <input class="but_a back_orange color_f font18 radius_3 pointer" style="width:100%" type="button" id="logout_btn" href="login" value="退出登录" />
                     </div>
                 </div>
 
@@ -118,7 +117,7 @@
         <div class="foot back_white">
             <div class="web_widht">
                 <div class="foot2 left color_9">
-                    <p class="color_c"><a href="/about/">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/about/10">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/news/">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="/ann/">网站公告</a></p>
+                    <p class="color_c"><a href="#">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">网站公告</a></p>
                     <p>Copyright © 2015  版权所有 </a></p>
                 </div>
                 <div class="clear"></div>

@@ -1,0 +1,83 @@
+#set($layout = "manageLayout.vm")
+
+<script src="js/userManage.js"></script>
+<script src="js/utility.js"></script>
+</script>
+<script >
+var addBtn=function(){
+var username1=$('#username').val();
+var password1=$('#password').val();
+var data={username:username1,password:password1};
+	   	$.ajax({
+				url: "registerYancheng",
+				type: 'post',					
+				data:data,
+				success: function(data){
+				alert("添加成功");
+				$('#username').val('');
+				$('#password').val('');
+				},
+				error: function(data){
+					
+				}
+			});
+			};
+</script>
+<link href="css/tables.css" rel="stylesheet">
+<link href="css/master.css" rel="stylesheet">
+<div class="panel panel-default">
+   <div class="panel-body">
+     <div class="row" style="padding-top:2%;width:50%;padding-left:20px">
+		    <label  style="margin:5px">添加用户：</label>
+    <input class="form-control " style="margin:5px" id="username" placeholder="用户名"/>	
+	<input class="form-control " style="margin:5px" id="password" placeholder="密码"/>	
+<button type="button" style="margin:5px" id="addUserBtn" class="btn btn-info" onclick='addBtn()'>添加用户</button>
+</div>
+	
+   </div>
+</div>
+
+<div class="panel panel-default">
+   <div class="panel-body">
+      <div class="row" style="padding-top:1%;">
+	<div class="col-md-2">
+		    <label  style="float:right;padding-top:10px">输入姓名：</label>
+    </div>
+<div  class="col-md-4" >
+    <input class="form-control " id="username1" placeholder="用户名"/>	
+</div>
+<div class="col-md-4">
+<button type="button" class="btn btn-info" id="searchBtn">查找</button>
+<button type="button" style="margin-left:20px" class="btn btn-info" id="seeAllBtn">查看全部</button>
+<button type="button" style="margin-left:20px" class="btn btn-info" id="deleteBtn">删除</button>
+</div>
+</div>
+   </div>
+</div>
+<div class="row" style="width:90%;padding-left:15px">
+	<div class="col-lg-10">
+		
+		<table class="table table-hover  table-condensed table-bordered"  style="font-size:12px" id='table' >
+           <thead>
+            <tr>
+                <th>选择</th>
+					<th >ID</th>		
+					<th>用户名</th>
+					<th>密码</th>
+					<th>注册时间</th>
+            </tr>
+          </thead>
+          	<tbody id="userBody">		
+			</tbody>
+          </table>
+		  
+    </div>
+	
+</div>
+<script>
+$(document).ready(function(){
+	$("#userBody").user.initial();
+});
+	
+</script>
+

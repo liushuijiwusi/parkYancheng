@@ -77,29 +77,13 @@
                     <div class="clearfix web_widht">
                         <ul class="clearfix left">
                             <li  >
-                                <a href="/">首 页</a></li@Html>
+                                <a href="/parkYanCheng">首 页</a></li@Html>
                             </li>
                             <li class="on"><a href="login">个人中心</a></li>
                             <li ><a href="map">停车场搜索</a></li>
-                            <li ><a href="help">停车指南</a></li>
-                            <li><a href="/feedback/">投诉建议</a></li>
+
                         </ul>
-                        <div class="search_i  right relative">
-                            <form action="/help/" method="post" onsubmit="return checksearch()">
-                                <script>
-                                    function checksearch() {
-                                        if ($('#keywords').val().replace(/\s/ig, '') == '') {
-                                            $('#keywords').focus();
-                                            return false;
-                                        }
-                                        window.location.href = '/search/' + escape($('#keywords').val());
-                                        return false;
-                                    }
-                                </script>
-                                <input class="input_1 font14 radius_3" type="text" onblur="if(this.value=='') this.value='请输入关建字'" onclick="if(this.value=='请输入关建字') this.value=''" value="请输入关建字" name="keywords" id="keywords" />
-                                <input class="but_1 absolute pointer" type="submit" name="button" id="button" value="" />
-                            </form>
-                        </div>
+     
                     </div>
                 </div>
             </div>
@@ -111,13 +95,11 @@
                             <dt class="on"><a href="#">基础服务<i class="i"></i></a></dt>
                             <dd>
                                 <ul>
-                                    <li class="on"><i class="i"></i><a href="">中心首页</a></li>
+                                    <li class="on"><i class="i"></i><a href="">个人首页</a></li>
                                     <li><i class="i"></i><a href="parkinfomy" >停车场信息</a></li>
                                     <li><i class="i"></i><a href="parkmy" >车位信息</a></li>
                                     <li><i class="i"></i><a href="announcementviewmy" rel="car">公告信息</a></li>
-                                    <li><i class="i"></i><a href="#" rel="monthcard">我的月卡</a></li>
-                                    <li><i class="i"></i><a href="#" rel="balance">电子钱包</a></li>
-                                    <li><i class="i"></i><a href="#" rel="consume">消费记录</a></li>
+
                                 </ul>
                             </dd>
                         </dl>
@@ -133,7 +115,7 @@
                         </dl>
                     </div>
                     <div class="img_bfb m_t10">
-                        <input class="but_a back_orange color_f font18 radius_3 pointer" style="width:100%" type="button" id="logout_btn" value="退出登录" />
+                        <input class="but_a back_orange color_f font18 radius_3 pointer" style="width:100%" type="button" id="logout_btn" href="login" value="退出登录" />
                     </div>
                 </div>
 

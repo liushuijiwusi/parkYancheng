@@ -3,6 +3,7 @@ package cn.park.controller;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,5 +26,23 @@ public class usersController {
 		String url = "http://120.25.153.123/parkshow/getAllUsers";
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
+	}
+	@RequestMapping(value = "/getUserByName/{username}")
+	@ResponseBody
+	public Object getUserByName(@PathVariable("username")String username){
+		String url = "http://120.25.153.123/parkshow/getUserByName/"+username;
+		Map<String, Object> result = HttpUtil.get(url);
+		return result.get("body");
+	}
+	@RequestMapping(value = "/deleteUserById/{id}")
+	@ResponseBody
+	public Object deleteUserById(@PathVariable("id")int id){
+		String url = "http://120.25.153.123/parkshow/deleteUserById/"+id;
+		Map<String, Object> result = HttpUtil.get(url);
+		return result.get("body");
+	}
+	@RequestMapping("/usermanage")
+	public String usermanage(){
+		return "userManage";
 	}
 }

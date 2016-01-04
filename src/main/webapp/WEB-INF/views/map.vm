@@ -92,12 +92,11 @@
                     <div class="clearfix web_widht">
                         <ul class="clearfix left">
                             <li  >
-                                <a href="/">首 页</a></li@Html>
+                                <a href="/parkYanCheng">首 页</a></li@Html>
                             </li>
                             <li ><a href="/parkYanCheng/login">个人中心</a></li>
                             <li class="on"><a href="/map">停车场搜索</a></li>
-                            <li ><a href="/help">停车指南</a></li>
-                            <li><a href="/feedback">投诉建议</a></li>
+     
 
                         </ul>
                         

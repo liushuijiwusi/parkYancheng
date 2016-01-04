@@ -5,9 +5,36 @@
 		bindTrClick();
 		bindRefreshClick();
 //		renderuser(0, $.fn.page.pageSize);
-		renderPagination();
+		bindSeeAll();
+		bindSearch();
+		bindDelete();
 	};
 	
+	var bindSeeAll=function(){
+		$('#seeAllBtn').on('click',$(this),function(){
+			renderPagination();
+		})
+	}
+	var bindSearch=function(){
+		$('#searchBtn').on('click',$(this),function(){
+			getUserByName();
+			$('#username').val('');
+		})
+	}
+	var bindDelete=function(){
+		$('#deleteBtn').on('click',$(this),function(){
+			if (confirm("是否删除所选择的用户")) {
+				deleteUsers();
+				alert("删除完成");
+			}
+
+		})
+	}
+	var bindAddUser=function(){
+		$('#addUserBtn').on('click',$(this),function(){
+			
+		})
+	}
 	/**bind tr click*/
 	var bindTrClick = function(){
 		var userBody = $("#userBody");
@@ -55,6 +82,7 @@
 		data = data.body;
 		for(var i = 0; i < data.length; i++){
 			var tr = $("<tr></tr>");
+			tr.append('<td><input type="checkbox" /></td>');
 			tr.append('<td>' + data[i]['id']+ '</td>');
 			tr.append('<td>' + data[i]['username']+ '</td>');
 			tr.append('<td>' + data[i]['password']+ '</td>');
@@ -88,7 +116,40 @@
 			}
 		});
 	};
-	
+	var getUserByName=function(){
+		var username=$('#username1').val();
+		if (username=="") {
+			alert("请输入用户名");
+			return;
+		}
+		$.ajax({
+			url: "getUserByName/"+username,
+			type: 'get',
+			success: function(data){
+				data=$.parseJSON(data);
+				filluserTbody(data);
+			},
+			error: function(data){
+				
+			}
+		});
+	}
+	var deleteUsers=function(){
+		 $("#table").find(":checkbox:checked").each(function(){
+		       var id = $(this).parent().next().text();
+		   	$.ajax({
+				url: "deleteUserById/"+id,
+				type: 'get',
+				success: function(data){
+		//			data=$.parseJSON(data);
+		//			filluserTbody(data);
+				},
+				error: function(data){
+					
+				}
+			});
+		    });
+	}
 	var pageClickFunc = function(index){
 		renderuser($.fn.page.pageSize * ($.fn.page.currentPage - 1), $.fn.page.pageSize);
 	};

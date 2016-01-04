@@ -9,6 +9,13 @@
 	};
 	
 	var getFrameData=function(){
+		var parkId = parseInt($('#park-select').val());
+		var header= $('#infoheader').val();
+		var content=$('#infocontent').val();
+		if (header==""||content=="") {
+			alert("输入通知信息");
+			return;
+		}
 		$.ajaxFileUpload({
 			url: 'upload',
 	        secureuri: false,
@@ -19,10 +26,7 @@
 	            var uri=databody.uri;
 	            if(uri==null){
 	            	uri=[""];
-	            }
-	            	var parkId = parseInt($('#park-select').val());
-					var header= $('#infoheader').val();
-					var content=$('#infocontent').val();
+	            }	            
 					$.ajax({
 						url:"insert/parkNews",
 						type: 'post',
