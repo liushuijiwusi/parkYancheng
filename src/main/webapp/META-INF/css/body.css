@@ -29,6 +29,7 @@ input,textarea{font-family:"Microsoft yahei"; font-size:12px;color:#888; border:
 .pointer{cursor: pointer}
 
 /* CSS 边距 */
+.margin60 { margin:60px auto;}
 .m_t10{ margin-top:10px;}
 .m_t20{ margin-top:20px;}
 .m_t25{ margin-top:25px;}
@@ -330,15 +331,15 @@ height: expression(this.height > 5000  && this.width / 1120px < this.height / 50
 .log_jm{ height:520px; padding-top:140px; background:url(../images/log_jm.jpg) no-repeat center top;}
 .jm_log{ width:700px; height:380px; margin:0 auto 0 auto;box-shadow: 0px 0px 10px 0px #666;}
 /* 底部 */
-.foot{  position:absolute;bottom:0;width:100%; clear:both;}
+.foot{  position:absolute;bottom:0;width:100%; clear:both; background-color: #000;}
 .foot .foot2{ padding:30px 0 0 16px;}
     .foot .web_widht {
-        margin:30px auto
+        margin:10px auto
     }
     .foot .ewm img {
         width:100px;
     }
-.containerx{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
+.container{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
 .container_page{padding-bottom:140px;/*padding等于footer的高度*/}
 
 .pager a,.pager span { display:inline-block; line-height:30px; padding:0 5px; min-width:20px; margin:0 5px; border:1px solid #ccc;}

@@ -36,7 +36,7 @@
 	var showparks=function(){
 		
 		for(var i=0;i<data_info.length;i++){
-			var marker = new BMap.Marker(new BMap.Point(data_info[i][1],data_info[i][0]));  // 创建标注
+			var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
 			var content = data_info[i][2];
 			map.addOverlay(marker);               // 将标注添加到地图中
 			addClickHandler(content,marker);

@@ -46,7 +46,7 @@ public class MainController {
 	public String parking(){
 		return "parking";
 	}
-	@RequestMapping("/pay")
+	@RequestMapping("pay")
 	public String pay(){
 		return "pay";
 	}
