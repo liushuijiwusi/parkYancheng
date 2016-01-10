@@ -20,19 +20,13 @@
                     });
                 });
             </script>
-
-    
-<style>
-    .foot {
-        background-color: #f2f2f3;
-    }
-</style>
-
 </head>
 
 <body>
     <div class="back_to_top"><a title="返回顶部" href="javascript:;"><i class="i"></i></a></div>
+
     <div class="container">
+
         <div class="container_page clearfix">
             <div class="head back_white">
                 <div class="web_widht top clearfix">
@@ -48,8 +42,11 @@
                                 <a href="/">首 页</a></li@Html>
                             </li>
                             <li><a href="/parkYanCheng/login">个人中心</a></li>
-                            <li ><a href="map">停车场搜索</a></li>                           
-                        </ul>      
+                            <li ><a href="map">停车场搜索</a></li>
+
+                           
+                        </ul>
+        
                     </div>
                 </div>
             </div>
@@ -59,17 +56,17 @@
     </div>
     <div class="banner">
         <ul>
-        <li style="background:#63ecd4 url(images/photo1.jpg) no-repeat center top;">
+        <li style="background:#eee url(images/photo1.jpg) no-repeat center top;">
             <a href="/map" target="_blank"></a>
         </li>
-        <li style="background:#63ecd4 url(images/photo2.jpg) no-repeat center top;">
+        <li style="background:#eee url(images/photo2.jpg) no-repeat center top;">
             <a href="login" target="_blank"></a>
         </li>
         </ul>
     </div>
     <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-    <a class="prev" href="javascript:void(0)"></a>
-    <a class="next" href="javascript:void(0)"></a>
+    <a class="prev" style="background-color:black;"  href="javascript:void(0)"></a>
+    <a class="next" style="background-color:black;" href="javascript:void(0)"></a>
 </div>
 
 <div class="web_widht">
@@ -86,21 +83,18 @@
     </div>
 
     <div class="dist font24 radius_3 relative text_center">我们盐城目前共有 <b class="font36 color_f" id="parknum"></b> 个停车场 <b class="font36 color_f" id="cheweinum"></b> 个停车位 <a href="/map/" class="i"><img src="images/ico3.png" /></a></div>
+</div>   
+
+<div style="margin:0 auto;text-align:center; padding:60px 0 10px 0;" >
+ 	<img src="images/advertise.png" />
 </div>
 
-  	<div class="foot back_white">
-				<div class="web_widht">
 
-					<div class="foot2 left color_9">
-						<p class="color_c p_b10"><a href="#">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">联系我们</a>
-						&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">网站公告</a></p>
-						<p class="font12">Copyright © 2015  版权所有 </a></p>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-			</div>
-
+     <div class="foot">         
+        <p class="color_c"><a href="#">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">联系我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">新闻中心</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">网站公告</a></p>
+        <p>Copyright © 2015  版权所有 </a></p>
+     </div>
+               
 		<script type="text/javascript">
 		$.fn.initial();
 			jQuery(".slideBox").slide({ mainCell: ".banner ul", autoPlay: true, effect: "left", delayTime: 1000, mouseOverStop: false });

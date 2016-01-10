@@ -95,18 +95,28 @@
                                 <a href="/parkYanCheng">首 页</a></li@Html>
                             </li>
                             <li ><a href="/parkYanCheng/login">个人中心</a></li>
-                            <li class="on"><a href="/map">停车场搜索</a></li>
-     
-
-                        </ul>
-                        
+                            <li class="on"><a href="/map">停车场搜索</a></li>     
+                        </ul>                      
                     </div>
                 </div>
             </div>
 <div class="search_map absolute back_white radius_3 font16">
-
- 
-
+<div id="socia_cont" class="left">
+        <div class="select color_f">
+            <i class="i"></i>
+            <input class="val" name="lid" value="" type="hidden">
+            <div class="show"></div>
+            <div style="display: none;" class="options">
+                <div class="option">美食</div>
+                <div class="option">加油站</div>
+				 <div class="option">汽车维修</div>
+                <div class="option">汽车美容</div>
+                
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
 <div class="map_bd left" id="mapyancheng"></div>
 <div class="add_list back_white right color_9 lh_18" id="about_content">
     <ul id="parking_list">

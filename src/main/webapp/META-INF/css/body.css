@@ -29,7 +29,6 @@ input,textarea{font-family:"Microsoft yahei"; font-size:12px;color:#888; border:
 .pointer{cursor: pointer}
 
 /* CSS 边距 */
-.margin60 { margin:60px auto;}
 .m_t10{ margin-top:10px;}
 .m_t20{ margin-top:20px;}
 .m_t25{ margin-top:25px;}
@@ -331,16 +330,20 @@ height: expression(this.height > 5000  && this.width / 1120px < this.height / 50
 .log_jm{ height:520px; padding-top:140px; background:url(../images/log_jm.jpg) no-repeat center top;}
 .jm_log{ width:700px; height:380px; margin:0 auto 0 auto;box-shadow: 0px 0px 10px 0px #666;}
 /* 底部 */
-.foot{  position:absolute;bottom:0;width:100%; clear:both; background-color: #000;}
+
+.foot{bottom:0;width:100%; clear:both; background-color: #000; margin-top:50px; padding-top:10px;
+   border-top:1px solid #ccc;text-align:center; background-color: #f2f2f3; font-size:14px;}
+
+.foot p { margin-bottom:15px;}
 .foot .foot2{ padding:30px 0 0 16px;}
     .foot .web_widht {
-        margin:10px auto
+        margin:30px auto
     }
     .foot .ewm img {
         width:100px;
     }
-.container{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
-.container_page{padding-bottom:140px;/*padding等于footer的高度*/}
+.containerx{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
+.container_page{padding-bottom:10px;/*padding等于footer的高度*/}
 
 .pager a,.pager span { display:inline-block; line-height:30px; padding:0 5px; min-width:20px; margin:0 5px; border:1px solid #ccc;}
     .pager a:hover, .pager a.current,.pager span.current {
@@ -445,15 +448,6 @@ transform:rotate(180deg);
 .tipsjt_b {
     background:url(../images/map_jt_b.gif) center center no-repeat; height:16px; width:16px; position:absolute; left:152px; bottom:-16px
 }
-
-
-
-
-
-
-
-
-
 
 .car_man .port{ border:1px solid #f2f2f3; margin-right:10%; margin-left:5%;}
 .car_man .port,.car_man .port img{ width:30px; height:30px; border-radius:50%; vertical-align:inherit;}

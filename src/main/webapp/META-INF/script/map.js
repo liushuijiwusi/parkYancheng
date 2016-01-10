@@ -3,16 +3,22 @@
 	
 	$.fn.map.initial=function(){
 		mapInitial();
+		optionListener();
 	};
 	var map;
 	var point;
+	var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(23, 25), {
+		 offset: new BMap.Size(10, 25), // 指定定位位置
+		 imageOffset: new BMap.Size(0, 0 - 10 * 25) // 设置图片偏移
+		 });
 	var mapInitial=function(){
 		map = new BMap.Map("mapyancheng");
 		point = new BMap.Point(120.15755, 33.35);
 		map.centerAndZoom(point, 15);	
 		map.enableScrollWheelZoom();	
+		
 		getData();
-		var marker = new BMap.Marker(new BMap.Point(120.15755,33.36664));  // 创建标注
+	//	var marker = new BMap.Marker(new BMap.Point(120.15755,33.36664));  // 创建标注
 		//map.addOverlay(marker);     
 	};
 	var data_info;
@@ -27,6 +33,19 @@
 			openInfo(content,e)}
 		);
 	}
+	
+	var optionListener=function(){
+		$('#socia_cont .option').on('click',$(this),function(){
+			 var choice = $(this).html();
+			 point = new BMap.Point(120.15755, 33.35);
+				map.centerAndZoom(point, 15);
+			 var local = new BMap.LocalSearch(map, {
+					renderOptions:{map: map}
+					});
+					local.search(choice);
+		});
+	}
+	
 	function openInfo(content,e){
 		var p = e.target;
 		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
@@ -36,7 +55,7 @@
 	var showparks=function(){
 		
 		for(var i=0;i<data_info.length;i++){
-			var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+			var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]),{icon: myIcon});  // 创建标注
 			var content = data_info[i][2];
 			map.addOverlay(marker);               // 将标注添加到地图中
 			addClickHandler(content,marker);
@@ -66,10 +85,37 @@
 					data_info[i]=tmparray;
 					
 				}
+			
 				showparks();
+				getPoints(parkdata);
 			},
 		});
 	}
+	
+    function getPoints(parkdata) {
+    	var v_html='';
+        for (var i=0;i<parkdata.length;i++) {
+        	
+            v_html += "<li p_id=" + i + ">";
+            v_html += '<h1 class="font18 color_3">' + parkdata[i].name + '</h1>';
+            v_html += '<p>空余车位：<b class="green">' + parkdata[i].portLeftCount + '</b></p>';
+
+            if (parkdata[i].portLeftCount > 0)
+                v_html += '<a href="#" class="res back_orange font18 radius_3 absolute reservation" pid="' + i + '"><i class="i"></i>预定</a>';
+            v_html += '</li>';
+        }
+        //setpage(page, maxPage);
+        $("#parking_list").html(v_html);
+        $("#parking_list li").hover(function () {
+            var p_id = $(this).attr('p_id');
+            $('#parking_rm_' + p_id).removeClass('map_p_btn').addClass('map_p_btn_on');
+            
+        }, function () {
+            var p_id = $(this).attr('p_id');
+            $('#parking_rm_' + p_id).removeClass('map_p_btn_on').addClass('map_p_btn');
+        })
+    }
+	
 	function convertData(){
 		
 	}

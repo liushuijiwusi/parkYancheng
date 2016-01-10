@@ -2,11 +2,6 @@
 
 /* BODY */
 
-body {
-	background: #d8d6d8 url(../img/bkg-pat.png);
-	min-width: 320px;
-}
-
 /* HEADER */
 
 .header {
@@ -235,8 +230,6 @@ h3 { font-size: 22px; }
 h4 { font-size: 20px; }
 h5 { font-size: 18px; }
 h6 { font-size: 16px; }
-
-p { font-size: 12px; font-weight: 400; }
 
 .font-thin { font-weight: 300; }
 .font-bold { font-weight: 600; }
