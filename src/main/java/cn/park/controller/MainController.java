@@ -3,6 +3,7 @@ package cn.park.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.context.annotation.Primary;
@@ -22,9 +23,11 @@ import cn.park.service.HttpUtil;
 public class MainController {
 
 	@RequestMapping("/index")
-	public String index(){
+	@ResponseBody
+	public String index(HttpServletRequest request){
 		//System.out.println(111);
-		return "index";
+		String path=request.getSession().getServletContext().getRealPath("");
+		return path;
 	}
 	@RequestMapping("/login")
 	public String login(HttpSession session){

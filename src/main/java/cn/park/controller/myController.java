@@ -2,6 +2,8 @@ package cn.park.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,5 +40,14 @@ public class myController {
          }.getType() );		
 		 modelMap.addAttribute("parks", mapdata.get("body"));
 		return "announcementviewmy";
+	}
+	@RequestMapping("/logmy")
+	public String logmy(ModelMap modelMap,HttpSession session){
+		String username=(String) session.getAttribute("username");
+		if (username!="") {
+			modelMap.addAttribute("users",username);
+			return "logmy";
+		}
+		return "404";
 	}
 }

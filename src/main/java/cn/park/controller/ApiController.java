@@ -72,6 +72,20 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
+	@RequestMapping(value = "/insert/park", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object insertPark(@RequestBody Map<String, Object> args){	
+		String url = "http://120.25.153.123/park/insert/park";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	@RequestMapping(value = "/update/park", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object updatePark(@RequestBody Map<String, Object> args){	
+		String url = "http://120.25.153.123/park/update/park";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
 	@RequestMapping(value = "/getDayCountByPark", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getMonthCountByPark(@RequestBody Map<String, Object> args){	
@@ -79,7 +93,6 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
-
 	//parkController
 	@RequestMapping(value = "/getPark/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
@@ -88,13 +101,15 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
+	
+	
 	@RequestMapping(value = "/getNewsByParkId/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getNewsByParkId(@PathVariable int id){
 		String url = "http://120.25.153.123/parkshow/getNewsByParkId/"+id;
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
-	}
+	}	
 //获取包含盐城的数据
 	@RequestMapping(value = "/getParks", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
@@ -104,7 +119,29 @@ public class ApiController {
 	
 		return result.get("body");
 	}
-
+	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getParkDetail(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/parkshow/getParkDetailYancheng";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	@RequestMapping(value = "/insertUserYanchengLoginLog", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object insertUserYanchengLoginLog(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/parkshow/insertUserYanchengLoginLog";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	@RequestMapping(value = "/getUserYanchengLoginLog", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public Object getUserYanchengLoginLog(@RequestBody Map<String, Object> args){
+		String url = "http://120.25.153.123/parkshow/getUserYanchengLoginLog";
+		Map<String, Object> result = HttpUtil.post(url, args);
+		return result.get("body");
+	}
+	
+	
 	/**
 	 * 这里这里用的是MultipartFile[] myfiles参数,所以前台就要用<input type="file"
 	 * name="myfiles"/>
@@ -176,13 +213,7 @@ public class ApiController {
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
-	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
-	@ResponseBody
-	public Object getParkDetail(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/parkshow/getParkDetailYancheng";
-		Map<String, Object> result = HttpUtil.post(url, args);
-		return result.get("body");
-	}
+	
 	@RequestMapping(value = "/getParkCount", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParkCount(){
@@ -232,6 +263,10 @@ public class ApiController {
 		 if (status.equals("1001")) {
 			 session.setAttribute("username", username);
 			 session.setAttribute("isAdmin", false);
+			 String url2 = "http://120.25.153.123/parkshow/insertUserYanchengLoginLog";
+			 Map<String, Object> args2=new HashMap<>();
+			 args2.put("username", username);
+				Map<String, Object> result2 = HttpUtil.post(url2,args2 );
 			return "redirect:/parkinfomy";
 		}
 	//	 String isAllow=(String) mapdata.get("isAllow");

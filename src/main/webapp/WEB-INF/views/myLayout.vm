@@ -98,8 +98,8 @@
                                     <li class="on"><i class="i"></i><a href="">个人首页</a></li>
                                     <li><i class="i"></i><a href="parkinfomy" >停车场信息</a></li>
                                     <li><i class="i"></i><a href="parkmy" >车位信息</a></li>
-                                    <li><i class="i"></i><a href="announcementviewmy" rel="car">公告信息</a></li>
-
+                                    <li><i class="i"></i><a href="announcementviewmy" >公告信息</a></li>
+									<li><i class="i"></i><a href="logmy" >日志信息</a></li>
                                 </ul>
                             </dd>
                         </dl>

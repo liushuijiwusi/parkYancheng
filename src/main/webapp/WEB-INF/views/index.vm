@@ -82,11 +82,11 @@
         </div>
     </div>
 
-    <div class="dist font24 radius_3 relative text_center">我们盐城目前共有 <b class="font36 color_f" id="parknum"></b> 个停车场 <b class="font36 color_f" id="cheweinum"></b> 个停车位 <a href="/map/" class="i"><img src="images/ico3.png" /></a></div>
+    <div class="dist font24 radius_3 relative text_center">我们盐城目前共有 <b class="font36 color_f" id="parknum"></b> 个停车场 <b class="font36 color_f" id="cheweinum"></b> 个停车位 <a href="/parkYanCheng/map" class="i"><img src="images/ico3.png" /></a></div>
 </div>   
 
 <div style="margin:0 auto;text-align:center; padding:60px 0 10px 0;" >
- 	<img src="images/advertise.png" />
+ 	<img src="images/dibu.png" />
 </div>
 
 

@@ -16,7 +16,7 @@
 	};
 	
 	$.Loader.prototype.show = function(){
-		this.conponent.shCircleLoader();
+	//	this.conponent.shCircleLoader();
 		return this;
 	};
 	

@@ -1,13 +1,11 @@
-#set($layout = "manageLayout.vm")
+#set($layout = "myLayout.vm")
 <script src="js/log.js">
 </script>
 <div class="panel panel-default">
    <div class="panel-body">
 	 <label  style="margin:5px">选择用户：</label>
 	<select id="user-select" class="form-control" >
-					#foreach( $user in $users)
-						<option value=$user.id>$user.username</option>
-					#end
+						<option >$users</option>
 	</select>
 </div>
 </div>

@@ -11,9 +11,13 @@
 	//	bindSubmitParkBtnClick();
 	//	bindDeleteBtnClick();
 	//	bindSeacherBtnClick();
-		renderPark(0, 10);
+		renderPark(0, 20);
 	//	renderPagination();
-		searchParkByLocation();
+		bindAddBtnClick();
+		bindUpdateBtnClick();
+		bindSubmitParkBtnClick();
+		bindRefreshClick();
+		//searchParkByLocation();
 	};
 	
 	/**bind tr click*/
@@ -29,7 +33,7 @@
 	var bindRefreshClick = function(){
 		var refreshBtn = $('#refresh');
 		refreshBtn.on('click', $(this), function(){
-			renderPark($.fn.page.pageSize * ($.fn.page.currentPage - 1), $.fn.page.pageSize);
+			renderPark(0, 20);
 			$(this).blur();
 		});
 		
@@ -250,10 +254,6 @@
 		
 		var cols = $('#parkTable').find('thead tr th').length;
 		$("#parkBody").html('<tr><td colspan="' + cols + '"></td></tr>');
-
-		
-
-		
 		var data = {'low': 0, 'count': 70, 'T': new Date().getTime()};
 		$.ajax({
 			//url:$.fn.config.webroot + "/getParkDetail?low=" + low + "&count=" + count + "&_t=" + new Date().getTime(),
@@ -272,7 +272,160 @@
 			}
 		});
 	};
+	var bindAddBtnClick = function(){
+		$('#addPark').on('click', $(this), function(){
+			addBtnClickHandle();
+		});
+	};
 	
+	var addBtnClickHandle = function(){
+		$('#addParkForm')[0].reset();
+		$('input#parkName').removeAttr('parkId');
+		$('#addParkResult').html('');
+		$('#addParkModal').modal('show');
+	};
+	
+	var bindUpdateBtnClick = function(){
+		$('#updatePark').on('click', $(this), function(){
+			updateBtnClickHandle();
+		});
+	};
+	var updateBtnClickHandle = function(){
+		$('#addParkForm')[0].reset();
+		$('#addParkResult').html('');
+		var checkedTr = $('#parkBody').find('input[type="checkbox"]:checked').parents('tr');
+		if(checkedTr.length == 0)
+			return;
+		else
+			assignAddParkForm($(checkedTr[0]));
+		$('#addParkModal').modal('show');
+	};
+	
+var bindSubmitParkBtnClick = function(){	
+		$('#submitParkBtn').on('click', $(this), function(){		
+			var url = '';
+			var parkFields = getAddParkFormValue();
+			if(parkFields['id'] != undefined && parkFields['id'] != null ){
+				url = 'update/park';
+			}else{
+				url = 'insert/park';
+			}			
+			var addParkResultDiv = $('#addParkResult');
+			var loader = new $.Loader();
+			addParkResultDiv.append(loader.get());
+			loader.show();
+			$.ajax({
+				url:url,
+				type: 'post',
+				contentType: 'application/json;charset=utf-8',			
+				datatype: 'json',
+				data: $.toJSON(parkFields),
+				success: function(data){
+					if(data['status'] = 1001){
+						loader.remove();
+						addParkResultDiv.append($.fn.tip.success('提交操作完成'));
+						setTimeout('$("#addParkResult").html(""); $("#addParkModal").modal("hide");$("#refresh").click()', 500);
+					}
+				},
+				error: function(data){
+					loader.remove();
+					addParkResultDiv.append($.fn.tip.error('提交操作未完成'));
+					setTimeout('$("#addParkResult").html("");', 3000);
+				}
+			});
+		});
+	};
+	
+var assignAddParkForm = function(checkedTr){		
+		var tds = checkedTr.find('td');
+		$('input#parkName').attr('parkId', parseInt($(tds[1]).text()));
+		$('input#parkName').val($(tds[2]).text());		
+		$('input#channelCount').val($(tds[3]).text());
+		$('input#portCount').val($(tds[4]).text());
+		$('input#leftPortCount').val($(tds[5]).text());
+		$('input#chargeDaytime').val($(tds[6]).text());
+		$('input#chargeNight').val($(tds[7]).text());	
+		$('select#parkStatus').val($(tds[8]).attr('data'));
+		$('input#isFree')[0].checked = parseInt($(tds[9]).attr('data')) == 1 ? true : false;
+		$('input#floorCount').val($(tds[10]).text());
+		$('select#parkType').val($(tds[11]).attr('data'));
+		var positionInput = $('input#position');
+		positionInput.val($(tds[12]).text());
+		$('input#longitude').val($(tds[12]).attr('longitude'));
+		$('input#latitude').val($(tds[12]).attr('latitude'));
+		$('input#mapAddr').val(checkedTr.attr('mapAddr'));		
+		var position = checkedTr.attr('position');		
+		var pos_selects = ['select#seachprov', 'select#seachcity', 'select#seachdistrict'];
+		for(var i = 0; i < 3; i++)
+			$(pos_selects[i]).val(0);
+		$('#positionlast').val("");
+		
+		var positions = position.split(" ");
+		if(positions.length == 2){
+			$('#positionlast').val(positions[1]);
+		}
+		var areas = positions[0].split("-");
+		if(areas.length > 1 ){
+			
+	
+			for(var i = 0; i < areas.length; i++){
+				var select = $(pos_selects[i]);
+				var options = select.find('option');
+				for(var j = 0; j < options.length; j++){
+					if($(options[j]).text() == areas[i]){
+						$(options[j]).attr('selected', 'true');
+						select.change();
+					}
+				}
+			}				
+			
+		}	
+		$('input#number').val(checkedTr.attr('number'));
+		$('input#contact').val(checkedTr.attr('contact'));
+	};
+	
+	var getAddParkFormValue = function(){
+		var parkFields = {};
+		var parkId = $('input#parkName').attr('parkId');
+		if( parkId != undefined && parkId != null){
+			parkFields['id'] = parseInt(parkId);
+			//parkFields['Id'] = 2;
+		}		
+		parkFields['name'] = $('input#parkName').val();
+		parkFields['channelCount'] = parseInt($('input#channelCount').val());
+		parkFields['portCount'] = parseInt($('input#portCount').val());
+		parkFields['portLeftCount'] = parseInt($('input#leftPortCount').val());
+		parkFields['charge'] = parseFloat($('input#chargeDaytime').val());
+		parkFields['charge1'] = parseFloat($('input#chargeNight').val());
+		parkFields['charge2'] = 0.00;
+		parkFields['contact'] = $('input#contact').val();
+		parkFields['number'] = $('input#number').val();
+		parkFields['status'] = parseInt($('select#parkStatus').val());
+		parkFields['isFree'] = $('input#isFree')[0].checked ? 1 : 0;
+		parkFields['floor'] = parseInt($('input#floorCount').val());
+		parkFields['type'] = parseInt($('select#parkType').val());
+		parkFields['position'] = getAreaNamebyID(getAreaID())+' '+$('input#positionlast').val();
+		parkFields['longitude'] = parseFloat($('input#longitude').val());
+		parkFields['latitude'] = parseFloat($('input#latitude').val());
+		parkFields['mapAddr'] = $('input#mapAddr').val();
+		parkFields['date'] = (new Date()).format('yyyy-MM-dd hh:mm:ss');
+		return parkFields;
+	};
+
+	function getAreaNamebyID(areaID){
+		var areaName = "";
+		if(areaID.length == 2){
+			areaName = area_array[areaID];
+		}else if(areaID.length == 4){
+			var index1 = areaID.substring(0, 2);
+			areaName = area_array[index1] + "-" + sub_array[index1][areaID];
+		}else if(areaID.length == 6){
+			var index1 = areaID.substring(0, 2);
+			var index2 = areaID.substring(0, 4);
+			areaName = area_array[index1] + "-" + sub_array[index1][index2] + "-" + sub_arr[index2][areaID];
+		}
+		return areaName;
+	}
 	
 	var fillParkTbody = function(data){
 		var parkBody = $("#parkBody");
@@ -280,6 +433,7 @@
 		data = $.parseJSON(data["body"]);
 		for(var i = 0; i < data.length; i++){
 			var tr = $('<tr></tr>');
+			tr.append('<td><input type="checkbox" /></td>');
 			tr.append('<td>' + data[i]['id']+ '</td>');
 			tr.append('<td>' + data[i]['name']+ '</td>');
 			tr.append('<td>' + data[i]['channelCount']+ '</td>');
@@ -293,6 +447,11 @@
 			tr.append('<td data=' + data[i]['isFree'] + ' >' + free + '</td>');
 			tr.append('<td>' + data[i]['floor']+ '</td>');
 			tr.attr('mapAddr', data[i]['mapAddr']);
+			tr.attr('contact', data[i]['contact']);
+			tr.attr('number', data[i]['number']);
+			tr.attr('pictureUri', data[i]['pictureUri']);
+			tr.attr('position', data[i]['position']);
+			
 			var type='';
 			if(data[i]['type'] == 0)
 				type='室内';
@@ -304,9 +463,9 @@
 			tr.append('<td longitude='+ data[i]['longitude'] +' latitude=' + data[i]['latitude'] + ' >' + data[i]['position']+ '</td>');
 			tr.append('<td>' + data[i]['date']+ '</td>');
 			if( i % 2 == 0){
-				tr.addClass('info');
+				tr.addClass('success');
 			}else{
-				tr.addClass('warning');
+				tr.addClass('active');
 			}
 			parkBody.append(tr);
 		}
