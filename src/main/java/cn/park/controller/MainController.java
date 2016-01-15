@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import cn.park.model.Constants;
 import cn.park.service.HttpUtil;
 
 @Controller
@@ -64,7 +65,7 @@ public class MainController {
 	@RequestMapping(value = "/registerYancheng", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 	@ResponseBody
 	public Object registerYancheng(@RequestParam("username")String username,@RequestParam("password")String password){	
-		String url = "http://120.25.153.123/parkshow/registerYancheng";
+		String url = Constants.WEBAPIURL+"/registerYancheng";
 		Map<String, Object> args=new HashMap<String, Object>();
 		args.put("username", username);
 		args.put("password", password);

@@ -6,13 +6,13 @@
 	$.fn.parkChart.yearAccess = {'entranceAccess': 0, 'exitAccess':0};
 	$.fn.parkChart.initial = function(){
 	//	readCookieSetSelect();
-		updateDayAccess();
-		updateMonthAccess();
+//		updateDayAccess();
+//		updateMonthAccess();
 		updateLeftPort();
 
 		$('#park-select').on('change', $(this), function(){
-			updateDayAccess();
-			updateMonthAccess();
+//			updateDayAccess();
+//			updateMonthAccess();
 			updateLeftPort();
 		//	$.cookie('selectValue',$(this).val(),{path:'/',expires:10});
 			

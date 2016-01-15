@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.park.model.Constants;
 import cn.park.service.HttpUtil;
 
 @Controller
@@ -23,21 +24,21 @@ public class usersController {
 	@RequestMapping(value = "/getAllUsers")
 	@ResponseBody
 	public Object getAllUsers(){
-		String url = "http://120.25.153.123/parkshow/getAllUsers";
+		String url =Constants.WEBAPIURL+"/getAllUsers";
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/getUserByName/{username}")
 	@ResponseBody
 	public Object getUserByName(@PathVariable("username")String username){
-		String url = "http://120.25.153.123/parkshow/getUserByName/"+username;
+		String url = Constants.WEBAPIURL+"/getUserByName/"+username;
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/deleteUserById/{id}")
 	@ResponseBody
 	public Object deleteUserById(@PathVariable("id")int id){
-		String url = "http://120.25.153.123/parkshow/deleteUserById/"+id;
+		String url = Constants.WEBAPIURL+"/deleteUserById/"+id;
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}

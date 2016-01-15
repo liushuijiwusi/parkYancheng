@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import cn.park.model.Constants;
 import cn.park.service.HttpUtil;
 @Controller
 public class myController {
@@ -21,7 +23,7 @@ public class myController {
 	}
 	@RequestMapping("/parkmy")
 	public String parkmy(ModelMap modelMap){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url =Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
@@ -32,7 +34,7 @@ public class myController {
 	}
 	@RequestMapping("/announcementviewmy")
 	public String announcementviewmy(ModelMap modelMap){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url =Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();

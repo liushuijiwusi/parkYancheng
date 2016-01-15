@@ -8,5 +8,5 @@ public class  Constants{
 	public static  int ACCESSTABLESCOUNT = 200;
 	public static  String URL = "http://112.74.109.240/parkpictures/";
 	public static  String UPLOADDIR = "/usr/local/tomcat7/webapps/parkpictures/";
-
+	public static  String WEBAPIURL="http://120.25.159.154/park_yc";
 }

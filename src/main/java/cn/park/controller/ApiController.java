@@ -58,9 +58,9 @@ public class ApiController {
 		
 		String url;
 		if (parkId!=null) {
-			url="http://120.25.153.123/park/getAccessDetail?"+"low="+low+"&&count="+count+"&&parkId"+parkId;
+			url=Constants.WEBAPIURL+"/getAccessDetail?"+"low="+low+"&&count="+count+"&&parkId"+parkId;
 		} else {
-			url="http://120.25.153.123/park/getAccessDetail?"+"low="+low+"&&count="+count;
+			url=Constants.WEBAPIURL+"/getAccessDetail?"+"low="+low+"&&count="+count;
 		}
 		Map<String, Object> result = HttpUtil.get(url);
 		return Utility.gson.toJson(result.get("body"));
@@ -68,28 +68,28 @@ public class ApiController {
 	@RequestMapping(value = "/getHourCountByPark", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getHourCountByPark(@RequestBody Map<String, Object> args) throws ParseException{
-		String url = "http://120.25.153.123/park/getHourCountByPark";
+		String url = Constants.WEBAPIURL+"/getHourCountByPark";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/insert/park", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object insertPark(@RequestBody Map<String, Object> args){	
-		String url = "http://120.25.153.123/park/insert/park";
+		String url = Constants.WEBAPIURL+"/insert/park";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/update/park", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object updatePark(@RequestBody Map<String, Object> args){	
-		String url = "http://120.25.153.123/park/update/park";
+		String url = Constants.WEBAPIURL+"/update/park";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/getDayCountByPark", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getMonthCountByPark(@RequestBody Map<String, Object> args){	
-		String url = "http://120.25.153.123/park/getDayCountByPark";
+		String url = Constants.WEBAPIURL+"/getDayCountByPark";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
@@ -114,7 +114,7 @@ public class ApiController {
 	@RequestMapping(value = "/getParks", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParks(ModelMap modelMap, HttpServletRequest request, HttpSession session){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url = Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 	
 		return result.get("body");
@@ -122,21 +122,21 @@ public class ApiController {
 	@RequestMapping(value = "/getParkDetail", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParkDetail(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/parkshow/getParkDetailYancheng";
+		String url =Constants.WEBAPIURL+"/getParkDetail";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/insertUserYanchengLoginLog", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object insertUserYanchengLoginLog(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/parkshow/insertUserYanchengLoginLog";
+		String url = Constants.WEBAPIURL+"/insertUserYanchengLoginLog";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
 	@RequestMapping(value = "/getUserYanchengLoginLog", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getUserYanchengLoginLog(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/parkshow/getUserYanchengLoginLog";
+		String url = Constants.WEBAPIURL+"/getUserYanchengLoginLog";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
@@ -202,14 +202,14 @@ public class ApiController {
 	@RequestMapping(value = "/getParkByName", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public String getParkByName(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/park/getParkByName";
+		String url = Constants.WEBAPIURL+"/getParkByName";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return Utility.gson.toJson(result.get("body"));
 	}
 	@RequestMapping(value = "/update/parkFields", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object updateParkFields(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/park/update/parkFields";
+		String url = Constants.WEBAPIURL+"/update/parkFields";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
@@ -217,14 +217,14 @@ public class ApiController {
 	@RequestMapping(value = "/getParkCount", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParkCount(){
-		String url = "http://120.25.153.123:8080/park/getParkCount/";
+		String url = Constants.WEBAPIURL+"/getParkCount/";
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
 	@RequestMapping(value="/insert/parkNews")
 	@ResponseBody
 	public Object insertParkNews(@RequestBody Map<String, Object> args){
-		String url = "http://120.25.153.123/park/insert/parkNews";
+		String url = Constants.WEBAPIURL+"/insert/parkNews";
 		Map<String, Object> result = HttpUtil.post(url, args);
 		return result.get("body");
 	}
@@ -254,7 +254,7 @@ public class ApiController {
 			return "redirect:/parkinfomy";
 		}
 		 //访问用户表 看是否允许访问
-		 String url1 = "http://120.25.153.123/parkshow/userValidation";
+		 String url1 = Constants.WEBAPIURL+"/userValidation";
 		 Map<String, Object> result1 = HttpUtil.post(url1, args);
 		 Object object1=result1.get("body");
 		 Map<String, Object> mapdata1=gson.fromJson((String) object1,new TypeToken<Map<String, Object>>(){
@@ -263,7 +263,7 @@ public class ApiController {
 		 if (status.equals("1001")) {
 			 session.setAttribute("username", username);
 			 session.setAttribute("isAdmin", false);
-			 String url2 = "http://120.25.153.123/parkshow/insertUserYanchengLoginLog";
+			 String url2 = Constants.WEBAPIURL+"/insertUserYanchengLoginLog";
 			 Map<String, Object> args2=new HashMap<>();
 			 args2.put("username", username);
 				Map<String, Object> result2 = HttpUtil.post(url2,args2 );

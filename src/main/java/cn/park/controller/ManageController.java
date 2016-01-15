@@ -13,12 +13,14 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.HashMap;
 import java.util.List;
+
+import cn.park.model.Constants;
 import cn.park.service.HttpUtil;
 @Controller
 public class ManageController {
 	@RequestMapping("/announcement")
 	public String announcement(ModelMap modelMap){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url = Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
@@ -33,7 +35,7 @@ public class ManageController {
 	}
 	@RequestMapping("/parkupdate")
 	public String parkupdate(ModelMap modelMap){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url =Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
@@ -48,7 +50,7 @@ public class ManageController {
 	}
 	@RequestMapping("/announcementview")
 	public String announcementview(ModelMap modelMap){
-		String url = "http://120.25.153.123/parkshow/getParksYancheng";
+		String url = Constants.WEBAPIURL+"/getParks";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
@@ -59,7 +61,7 @@ public class ManageController {
 	}
 	@RequestMapping("/log")
 	public String log(ModelMap modelMap,HttpSession session){
-		String url = "http://120.25.153.123/parkshow/getAllUsers";
+		String url = Constants.WEBAPIURL+"/getAllUsers";
 		Map<String, Object> result = HttpUtil.get(url);
 		Object data=result.get("body");
 		 Gson gson = new Gson();
