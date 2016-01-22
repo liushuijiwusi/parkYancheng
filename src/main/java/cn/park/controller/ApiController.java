@@ -97,7 +97,7 @@ public class ApiController {
 	@RequestMapping(value = "/getPark/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getParkById(@PathVariable int id){
-		String url = "http://120.25.153.123:8080/park/getPark/"+id;
+		String url = Constants.WEBAPIURL+"/getPark/"+id;
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}
@@ -106,7 +106,7 @@ public class ApiController {
 	@RequestMapping(value = "/getNewsByParkId/{id}", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public Object getNewsByParkId(@PathVariable int id){
-		String url = "http://120.25.153.123/parkshow/getNewsByParkId/"+id;
+		String url = Constants.WEBAPIURL+"/getNewsByParkId/"+id;
 		Map<String, Object> result = HttpUtil.get(url);
 		return result.get("body");
 	}	

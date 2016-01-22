@@ -12,11 +12,12 @@
 		 imageOffset: new BMap.Size(0, 0 - 10 * 25) // 设置图片偏移
 		 });
 	var mapInitial=function(){
-		map = new BMap.Map("mapyancheng");
+		map = new BMap.Map("mapyancheng",{minZoom:11,maxZoom:16});
 		point = new BMap.Point(120.15755, 33.35);
 		map.centerAndZoom(point, 15);	
 		map.enableScrollWheelZoom();	
-		
+		var bottom_right_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT,offset:0});	
+		map.addControl(bottom_right_control);//添加地图比例尺
 		getData();
 	//	var marker = new BMap.Marker(new BMap.Point(120.15755,33.36664));  // 创建标注
 		//map.addOverlay(marker);     
@@ -37,8 +38,8 @@
 	var optionListener=function(){
 		$('#socia_cont .option').on('click',$(this),function(){
 			 var choice = $(this).html();
-			 point = new BMap.Point(120.15755, 33.35);
-				map.centerAndZoom(point, 15);
+	//		 point = new BMap.Point(120.15755, 33.35);
+	//			map.centerAndZoom(point, 15);
 			 var local = new BMap.LocalSearch(map, {
 					renderOptions:{map: map}
 					});
@@ -82,10 +83,8 @@
 		                v_html += '<p class="green font14">收费标准：</p> ';
 		                v_html += '  <div class="color_9">';
 					tmparray[2]= v_html;
-					data_info[i]=tmparray;
-					
-				}
-			
+					data_info[i]=tmparray;	
+				}		
 				showparks();
 				getPoints(parkdata);
 			},
